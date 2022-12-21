@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/webtool/static/css/main.ecb9afb6.css",
+    "main.css": "/webtool/static/css/main.bc3bad05.css",
     "main.js": "/webtool/static/js/main.860d7aab.js",
     "static/js/787.d0a431d9.chunk.js": "/webtool/static/js/787.d0a431d9.chunk.js",
     "index.html": "/webtool/index.html",
-    "main.ecb9afb6.css.map": "/webtool/static/css/main.ecb9afb6.css.map",
+    "main.bc3bad05.css.map": "/webtool/static/css/main.bc3bad05.css.map",
     "main.860d7aab.js.map": "/webtool/static/js/main.860d7aab.js.map",
     "787.d0a431d9.chunk.js.map": "/webtool/static/js/787.d0a431d9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecb9afb6.css",
+    "static/css/main.bc3bad05.css",
     "static/js/main.860d7aab.js"
   ]
 }
