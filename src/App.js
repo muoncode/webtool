@@ -1,6 +1,7 @@
-import "./App.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+import "./App.css";
 
 function App() {
   const navigate = useNavigate();
@@ -46,6 +47,26 @@ function App() {
           b += a[index].toLowerCase() + ",\n";
         }
         setKQ(b);
+      } else if (idSelect === 5) {
+        const a = text.split("\n");
+        let b = "";
+        for (let index = 0; index < a.length; index++) {
+          b += a[index].toLowerCase() + "\n";
+        }
+        setKQ(b);
+      } else if (idSelect === 6) {
+        let c = "";
+
+        text = text.replaceAll("  -  ES_", " ");
+
+        const d = text.split("\n");
+        for (let index = 0; index < d.length; index++) {
+          c += d[index].split(" - ")[0] + "\n";
+        }
+
+        c = c.replaceAll("(Guitar Version)", "");
+
+        setKQ(c);
       }
     } else {
       setKQ("Bạn phải nhập nhé !");
@@ -78,17 +99,22 @@ function App() {
           <option value={2}>Add at End</option>
           <option value={3}>Delete Newline</option>
           <option value={4}>To Lowercase</option>
+          <option value={5}>Lowercase Edit</option>
+          <option value={6}>Music Comment</option>
         </select>
 
         <button onClick={() => navigate("/tts_json")}>tts</button>
         <button onClick={() => navigator.clipboard.writeText(kq)}>Copy</button>
+        <button onClick={() => navigate("/home")}>Menu</button>
       </div>
 
       <textarea
+        className="input-text"
         rows={"30"}
         cols={"60"}
         placeholder={"Xem kết quả ở đây"}
         value={kq !== "" ? kq : ""}
+        onChange={() => {}}
       ></textarea>
     </div>
   );

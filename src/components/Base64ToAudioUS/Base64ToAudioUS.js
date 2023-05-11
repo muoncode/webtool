@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import "./Base64ToAudio.css";
+import "./Base64ToAudioUS.css";
 
 function Base64ToAudioUS() {
   const navigate = useNavigate();
@@ -113,6 +113,8 @@ function Base64ToAudioUS() {
         >
           Google TTS
         </button>
+
+        <button onClick={() => navigate("/home")}>Home</button>
       </div>
 
       <audio

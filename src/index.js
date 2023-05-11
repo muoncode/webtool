@@ -8,6 +8,9 @@ import reportWebVitals from "./reportWebVitals";
 import Base64ToAudio from "./components/Base64ToAudio/Base64ToAudio";
 import Test from "./components/Test/Test";
 import Base64ToAudioUS from "./components/Base64ToAudioUS/Base64ToAudioUS";
+import Home from "./components/Home/Home";
+import GetCommmentFromChat from "./components/GetCommmentFromChat/GetCommmentFromChat";
+import GetTextTranslate from "./components/GetTextTranslate/GetTextTranslate";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +37,10 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: "home/",
+    element: <Home />,
+  },
+  {
     path: "webtool/",
     element: <App />,
   },
@@ -44,6 +51,14 @@ const router = createBrowserRouter([
   {
     path: "tts_us/",
     element: <Base64ToAudioUS />,
+  },
+  {
+    path: "getcommment/",
+    element: <GetCommmentFromChat />,
+  },
+  {
+    path: "gettranslate/",
+    element: <GetTextTranslate />,
   },
 ]);
 

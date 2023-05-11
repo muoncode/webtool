@@ -25,7 +25,7 @@ function Base64ToAudio() {
   );
 
   return (
-    <div className="container">
+    <div className="container_base64_to_audio">
       <textarea
         rows={"30"}
         cols={"60"}
@@ -82,6 +82,7 @@ function Base64ToAudio() {
         </button>
 
         <button onClick={() => navigate("/tts_us")}>TTS US</button>
+        <button onClick={() => navigate("/home")}>Home</button>
       </div>
 
       <audio

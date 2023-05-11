@@ -1,0 +1,34 @@
+body {
+  background-color: wheat;
+}
+
+.container_get_cmt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 710px;
+  margin: 0;
+  padding: 0;
+}
+
+.btn_getCmt {
+  align-self: center;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.btn_getCmt {
+  display: inline-block; /* hiển thị như một khối nhỏ */
+  padding: 12px 20px; /* độ lớn của button */
+  background-color: #4caf50; /* màu nền */
+  color: white; /* màu chữ */
+  text-align: center; /* căn giữa nội dung */
+  cursor: pointer; /* thay đổi hình dạng chuột khi di chuột qua */
+  border-radius: 5px; /* bo tròn viền */
+}
+
+.btn_getCmt:hover {
+  background-color: #3e8e41; /* màu nền khi hover */
+  color: yellow;
+}

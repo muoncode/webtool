@@ -1,4 +1,4 @@
-.container {
+.container_base64_to_audio {
   background-color: #333;
   display: flex;
   justify-content: space-evenly;
@@ -7,7 +7,7 @@
   height: 100vh;
 }
 
-textarea {
+.container_base64_to_audio > textarea {
   font-size: 18px;
   padding: 10px 0 0 20px;
   /* margin: 26px 0; */
@@ -15,8 +15,7 @@ textarea {
   font-family: monospace;
 }
 
-button,
-a {
+button {
   padding: 15px 30px;
   margin-bottom: 15px;
   font-size: 20px;
@@ -28,14 +27,12 @@ a {
   text-decoration: none;
 }
 
-button:hover,
-a:hover {
+button:hover {
   color: orangered;
   background-color: aqua;
 }
 
-button:active,
-a:active {
+button:active {
   background-color: green;
   color: #fff;
 }
@@ -45,29 +42,8 @@ a:active {
   flex-direction: column;
 }
 
-select {
-  /* padding: 15px 30px; */
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: bolder;
-  font-family: monospace;
-  text-align: center;
-  color: red;
-}
-
-select > option {
-  /* padding: 15px 30px; */
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: bolder;
-  font-family: monospace;
-  text-align: center;
-  border-bottom: 1px solid black;
-  color: blue;
-}
-
 @media only screen and (max-width: 740px) {
-  .container {
+  .container_base64_to_audio {
     flex-wrap: wrap;
     background-color: red;
   }
