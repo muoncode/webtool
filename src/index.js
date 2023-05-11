@@ -15,7 +15,7 @@ import GetTextTranslate from "./components/GetTextTranslate/GetTextTranslate";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>This is Index</h1>,
+    element: <App />,
     errorElement: <h1>Đang lỗi rồi nha anh em ơi</h1>,
   },
   {
