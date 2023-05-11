@@ -11,6 +11,8 @@ export default function Test() {
         <br />
         <Link to={"c"}>Change Route</Link>
         <br />
+        <Link to={"/home"}>Home</Link>
+        <br />
       </h1>
 
       <h3 style={{ color: "red" }}>
