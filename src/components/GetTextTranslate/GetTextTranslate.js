@@ -39,7 +39,11 @@ export default function GetTextTranslate() {
                   a[index] = a[index].slice(0, -1);
                 }
 
+                a[index] = a[index].replace(' "', "");
                 const texts = a[index].split(":");
+                if (texts[1] !== undefined && texts[1].charAt(0) === ' "') {
+                  texts[1] = texts[1].replace(' "', "");
+                }
 
                 b.push({ id: index, text1: texts[0], text2: texts[1] });
               }
