@@ -71,7 +71,7 @@ export default function TranslateSubtitle() {
               const { Configuration, OpenAIApi } = require("openai");
 
               const configuration = new Configuration({
-                apiKey: "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",
+                apiKey: "",
               });
               const openai = new OpenAIApi(configuration);
 
