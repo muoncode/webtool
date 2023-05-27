@@ -8,6 +8,12 @@ export default function Home() {
 
   return (
     <div className="container_get_cmt">
+      <button
+        className="btn_getCmt"
+        onClick={() => navigate("/TranslateSubtitle")}
+      >
+        Translate Subtitle
+      </button>
       <button className="btn_getCmt" onClick={() => navigate("/getcommment")}>
         Get Comments
       </button>

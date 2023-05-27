@@ -59,15 +59,15 @@ button:active {
   font-weight: bolder;
 }
 
-.cmt_text {
+.text_translate > .cmt {
   color: white;
   margin: 0px;
   font-size: 18px;
 }
 
-.cmt_text:hover {
+.text_translate > .cmt :hover {
+  opacity: 0.8;
   cursor: pointer;
-  color: aqua;
 }
 
 @media only screen and (max-width: 740px) {
