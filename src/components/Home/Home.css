@@ -2,7 +2,7 @@ body {
   background-color: wheat;
 }
 
-.container_get_cmt {
+.container_home {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -31,4 +31,21 @@ body {
 .btn_getCmt:hover {
   background-color: #3e8e41; /* màu nền khi hover */
   color: yellow;
+}
+
+@media only screen and (max-width: 740px) {
+  .container_home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn_getCmt {
+    margin: 5px 0;
+    margin-right: 10px;
+  }
 }

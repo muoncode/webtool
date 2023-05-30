@@ -1,4 +1,4 @@
-.container_base64_to_audio {
+.container_get_cmt {
   background-color: #333;
   display: flex;
   justify-content: space-evenly;
@@ -7,7 +7,7 @@
   height: 100vh;
 }
 
-.container_base64_to_audio > textarea {
+.container_get_cmt > textarea {
   font-size: 18px;
   padding: 10px 0 0 20px;
   /* margin: 26px 0; */
@@ -53,11 +53,4 @@ button:active {
   /* opacity: 0.8; */
   cursor: pointer;
   color: orange;
-}
-
-@media only screen and (max-width: 740px) {
-  .container_base64_to_audio {
-    flex-wrap: wrap;
-    background-color: red;
-  }
 }

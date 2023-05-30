@@ -37,14 +37,58 @@ button:active {
   color: #fff;
 }
 
-.btnGroup {
+.btnGroup_tts {
   display: flex;
   flex-direction: column;
 }
 
 @media only screen and (max-width: 740px) {
   .container_base64_to_audio {
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
-    background-color: red;
+    height: 100%;
+    padding-bottom: 150px;
   }
-} ;
+
+  .container_base64_to_audio > textarea {
+    font-size: 18px;
+    padding: 10px 10px 0 10px;
+    /* margin: 26px 0; */
+    margin-top: 10px;
+    box-sizing: border-box;
+    font-family: monospace;
+    width: 95%;
+    height: 350px;
+  }
+
+  .btnGroup_tts > button {
+    padding: 15px 15px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    background-color: greenyellow;
+    color: blue;
+    font-weight: bolder;
+    font-family: monospace;
+    border: none;
+    text-decoration: none;
+  }
+
+  .btnGroup_tts > button:hover {
+    color: orangered;
+    background-color: aqua;
+  }
+
+  .btnGroup_tts > button:active {
+    background-color: green;
+    color: #fff;
+  }
+
+  .btnGroup_tts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+}

@@ -12,7 +12,7 @@ export default function GetCommmentFromChat() {
 
   return (
     <div>
-      <div className="container_base64_to_audio">
+      <div className="container_get_cmt">
         {isTextarea ? (
           <textarea
             rows={"30"}

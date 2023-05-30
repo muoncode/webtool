@@ -12,11 +12,11 @@ function Base64ToAudio() {
         audioEncoding: "LINEAR16",
         effectsProfileId: ["small-bluetooth-speaker-class-device"],
         pitch: 0,
-        speakingRate: 1,
+        speakingRate: 1.2,
       },
       voice: {
         languageCode: "vi-VN",
-        name: "vi-VN-Wavenet-C",
+        name: "vi-VN-Neural2-A",
       },
       input: {
         text: "",
@@ -36,7 +36,7 @@ function Base64ToAudio() {
         }}
       ></textarea>
 
-      <div className="btnGroup">
+      <div className="btnGroup_tts">
         <button
           onClick={() => {
             const regExp = /[a-zA-Z]/g;

@@ -7,7 +7,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="container_get_cmt">
+    <div className="container_home">
       <button
         className="btn_getCmt"
         onClick={() => navigate("/TranslateSubtitle")}
