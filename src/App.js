@@ -7,7 +7,7 @@ function App() {
   const navigate = useNavigate();
   const [textInput, setTextInput] = useState("");
   const [kq, setKQ] = useState("");
-  const [idService, setIdService] = useState(0);
+  const [idService, setIdService] = useState(4);
 
   const handleString = (text) => {
     const idSelect = Number(idService);
@@ -93,7 +93,6 @@ function App() {
           onChange={(e) => {
             setIdService(e.target.value);
           }}
-          defaultValue={4}
         >
           <option value={0}>Add Characters</option>
           <option value={1}>Replace</option>
