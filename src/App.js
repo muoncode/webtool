@@ -93,6 +93,7 @@ function App() {
           onChange={(e) => {
             setIdService(e.target.value);
           }}
+          defaultValue={4}
         >
           <option value={0}>Add Characters</option>
           <option value={1}>Replace</option>
