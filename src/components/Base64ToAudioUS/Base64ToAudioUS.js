@@ -8,8 +8,8 @@ function Base64ToAudioUS() {
   const [textInput, setTextInput] = useState("");
   const [base64Audio, setBase64Audio] = useState("");
   const [speed, setSpeed] = useState(1);
-  const [languageCode, setLanguageCode] = useState("en-US");
-  const [voiceName, setVoiceName] = useState("en-US-News-L");
+  const [languageCode, setLanguageCode] = useState("vi-VN");
+  const [voiceName, setVoiceName] = useState("vi-VN-Neural2-D");
 
   return (
     <div className="container">
