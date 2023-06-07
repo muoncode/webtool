@@ -12,11 +12,11 @@ function Base64ToAudio() {
         audioEncoding: "LINEAR16",
         effectsProfileId: ["small-bluetooth-speaker-class-device"],
         pitch: 0,
-        speakingRate: 1.2,
+        speakingRate: 1,
       },
       voice: {
-        languageCode: "vi-VN",
-        name: "vi-VN-Neural2-A",
+        languageCode: "en-US",
+        name: "en-US-Studio-M",
       },
       input: {
         text: "",
