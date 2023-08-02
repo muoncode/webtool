@@ -11,6 +11,7 @@ function Base64ToAudioUS() {
   const [speed, setSpeed] = useState(1);
   const [languageCode, setLanguageCode] = useState("vi-VN");
   const [voiceName, setVoiceName] = useState("vi-VN-Neural2-D");
+  const [count_character, setCount_character] = useState(0);
 
   return (
     <div className="container">
@@ -21,6 +22,7 @@ function Base64ToAudioUS() {
         value={textInput}
         onChange={(e) => {
           setTextInput(e.target.value);
+          setCount_character(e.target.value.length);
         }}
       ></textarea>
 
@@ -128,6 +130,8 @@ function Base64ToAudioUS() {
         </button>
 
         <button onClick={() => navigate("/home")}>Home</button>
+
+        <button id="count_character">{count_character}</button>
       </div>
 
       <audio
