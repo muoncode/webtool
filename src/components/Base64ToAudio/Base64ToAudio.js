@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { saveAs } from "file-saver";
 
 import "./Base64ToAudio.css";
 
@@ -59,7 +60,7 @@ function Base64ToAudio() {
                 .then((response) => response.json())
                 .then((result) => {
                   setBase64Audio(
-                    "data:audio/mpeg;base64," + result["audioContent"]
+                    "data:audio/wav;base64," + result["audioContent"]
                   );
                 })
                 .catch((error) => setTextInput(error));
@@ -69,7 +70,24 @@ function Base64ToAudio() {
           Ok
         </button>
 
-        <button onClick={() => navigate("/webtool")}>tool</button>
+        <button
+          onClick={() => {
+            if (base64Audio !== "") {
+              const a = document.getElementById("tts_audio_json");
+              let currentTime = new Date()
+                .toLocaleString()
+                .replace(/[/:]/g, "");
+              currentTime = currentTime.replace(" ", "");
+              const audioUrl = a.src;
+              const audioName = `${currentTime}.wav`;
+              saveAs(audioUrl, audioName);
+            } else {
+              alert("Chưa có Audio để tải về");
+            }
+          }}
+        >
+          Download Audio
+        </button>
 
         <button
           onClick={() =>
@@ -86,6 +104,7 @@ function Base64ToAudio() {
       </div>
 
       <audio
+        id="tts_audio_json"
         controls
         autoPlay
         src={base64Audio !== "" ? base64Audio : ""}

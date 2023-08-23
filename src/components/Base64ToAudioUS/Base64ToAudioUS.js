@@ -107,12 +107,18 @@ function Base64ToAudioUS() {
 
         <button
           onClick={() => {
-            const a = document.getElementById("tts_audio");
-            let currentTime = new Date().toLocaleString().replace(/[/:]/g, "");
-            currentTime = currentTime.replace(" ", "");
-            const audioUrl = a.src;
-            const audioName = `${currentTime}.wav`;
-            saveAs(audioUrl, audioName);
+            if (base64Audio !== "") {
+              const a = document.getElementById("tts_audio");
+              let currentTime = new Date()
+                .toLocaleString()
+                .replace(/[/:]/g, "");
+              currentTime = currentTime.replace(" ", "");
+              const audioUrl = a.src;
+              const audioName = `${currentTime}.wav`;
+              saveAs(audioUrl, audioName);
+            } else {
+              alert("Chưa có Audio để tải về");
+            }
           }}
         >
           Download Audio
