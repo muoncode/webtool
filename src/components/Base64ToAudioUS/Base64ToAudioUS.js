@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { saveAs } from "file-saver";
+import axios from "axios";
 
 import "./Base64ToAudioUS.css";
 
@@ -12,6 +13,46 @@ function Base64ToAudioUS() {
   const [languageCode, setLanguageCode] = useState("vi-VN");
   const [voiceName, setVoiceName] = useState("vi-VN-Neural2-D");
   const [count_character, setCount_character] = useState(0);
+
+  const tts_axios = () => {
+    const data = JSON.stringify({
+      audioConfig: {
+        audioEncoding: "LINEAR16",
+        effectsProfileId: ["small-bluetooth-speaker-class-device"],
+        pitch: 0,
+        speakingRate: speed,
+      },
+      input: {
+        text: textInput,
+      },
+      voice: {
+        languageCode: languageCode,
+        name: voiceName,
+      },
+    });
+
+    const config = {
+      method: "post",
+      url: "https://cxl-services.appspot.com/proxy?url=https://texttospeech.googleapis.com/v1beta1/text:synthesize&token=03ANYolquf_efs0-vgXjklkw2xrTL5osvzLZz3WBnXKWr6aZlSPtqNymu-0xRzreSsDOhU20MaC5jJ56QyUxQ2-jGgHQO5oBG2JL0izwQb6FAEYF_jFuBDPhDjOu4uWHSSCeh1V6Eer35Yf7QglJ9TT2bbhLweUlN3M5jdg2hrPqTBNNAa28qGe6O7vKKje08VUVloNnc5oRqx1EAgooWaVFsNOUo0EFIVd4ADUNlIp54KU6rDL2VEeswuw07SZgZCjJugcbxseDNU-89knsc5uSy_rtYVQal817IybuHIiS-MWxf4Nsfs25XC7slGgffu8HsQgL5B0tGUq1nzuQotUyW19jggUbnAE9t3VwrP8FBR6fyIdyHtMyUo4qvx83TvA-AmpxmxWapHTaEH1NFilnYCjpg_nUiLSq-KbJFOTXCGfC5AsPjp-v4ndTwTqAGnFWzNWfnwy4Rjr6BqpBp4h5GamPQqcE_vr4-kXeOAJXByRZDElMzjHli2mqucVtlYadx_Um5Jda3oMv759FZx_pw5N2d7U7cM0A",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        // const res = JSON.stringify(response.data);
+        const res = response.data;
+
+        // console.log(res);
+        // console.log(res["audioContent"]);
+        setBase64Audio("data:audio/wav;base64," + res["audioContent"]);
+      })
+      .catch(function (error) {
+        setTextInput(error);
+      });
+  };
 
   return (
     <div className="container">
@@ -62,43 +103,44 @@ function Base64ToAudioUS() {
             const regExp = /[a-zA-Z]/g;
 
             if (regExp.test(textInput)) {
-              const myHeaders = new Headers();
-              myHeaders.append("Content-Type", "application/json");
+              // const myHeaders = new Headers();
+              // myHeaders.append("Content-Type", "application/json");
 
-              const raw = JSON.stringify({
-                audioConfig: {
-                  audioEncoding: "LINEAR16",
-                  effectsProfileId: ["small-bluetooth-speaker-class-device"],
-                  pitch: 0,
-                  speakingRate: speed,
-                },
-                input: {
-                  text: textInput,
-                },
-                voice: {
-                  languageCode: languageCode,
-                  name: voiceName,
-                },
-              });
+              // const raw = JSON.stringify({
+              //   audioConfig: {
+              //     audioEncoding: "LINEAR16",
+              //     effectsProfileId: ["small-bluetooth-speaker-class-device"],
+              //     pitch: 0,
+              //     speakingRate: speed,
+              //   },
+              //   input: {
+              //     text: textInput,
+              //   },
+              //   voice: {
+              //     languageCode: languageCode,
+              //     name: voiceName,
+              //   },
+              // });
 
-              const requestOptions = {
-                method: "POST",
-                headers: myHeaders,
-                body: raw,
-                redirect: "follow",
-              };
+              // const requestOptions = {
+              //   method: "POST",
+              //   headers: myHeaders,
+              //   body: raw,
+              //   redirect: "follow",
+              // };
 
-              fetch(
-                "https://cxl-services.appspot.com/proxy?url=https://texttospeech.googleapis.com/v1beta1/text:synthesize&token=03ANYolquf_efs0-vgXjklkw2xrTL5osvzLZz3WBnXKWr6aZlSPtqNymu-0xRzreSsDOhU20MaC5jJ56QyUxQ2-jGgHQO5oBG2JL0izwQb6FAEYF_jFuBDPhDjOu4uWHSSCeh1V6Eer35Yf7QglJ9TT2bbhLweUlN3M5jdg2hrPqTBNNAa28qGe6O7vKKje08VUVloNnc5oRqx1EAgooWaVFsNOUo0EFIVd4ADUNlIp54KU6rDL2VEeswuw07SZgZCjJugcbxseDNU-89knsc5uSy_rtYVQal817IybuHIiS-MWxf4Nsfs25XC7slGgffu8HsQgL5B0tGUq1nzuQotUyW19jggUbnAE9t3VwrP8FBR6fyIdyHtMyUo4qvx83TvA-AmpxmxWapHTaEH1NFilnYCjpg_nUiLSq-KbJFOTXCGfC5AsPjp-v4ndTwTqAGnFWzNWfnwy4Rjr6BqpBp4h5GamPQqcE_vr4-kXeOAJXByRZDElMzjHli2mqucVtlYadx_Um5Jda3oMv759FZx_pw5N2d7U7cM0A",
-                requestOptions
-              )
-                .then((response) => response.json())
-                .then((result) => {
-                  setBase64Audio(
-                    "data:audio/wav;base64," + result["audioContent"]
-                  );
-                })
-                .catch((error) => setTextInput(error));
+              // fetch(
+              //   "https://cxl-services.appspot.com/proxy?url=https://texttospeech.googleapis.com/v1beta1/text:synthesize&token=03ANYolquf_efs0-vgXjklkw2xrTL5osvzLZz3WBnXKWr6aZlSPtqNymu-0xRzreSsDOhU20MaC5jJ56QyUxQ2-jGgHQO5oBG2JL0izwQb6FAEYF_jFuBDPhDjOu4uWHSSCeh1V6Eer35Yf7QglJ9TT2bbhLweUlN3M5jdg2hrPqTBNNAa28qGe6O7vKKje08VUVloNnc5oRqx1EAgooWaVFsNOUo0EFIVd4ADUNlIp54KU6rDL2VEeswuw07SZgZCjJugcbxseDNU-89knsc5uSy_rtYVQal817IybuHIiS-MWxf4Nsfs25XC7slGgffu8HsQgL5B0tGUq1nzuQotUyW19jggUbnAE9t3VwrP8FBR6fyIdyHtMyUo4qvx83TvA-AmpxmxWapHTaEH1NFilnYCjpg_nUiLSq-KbJFOTXCGfC5AsPjp-v4ndTwTqAGnFWzNWfnwy4Rjr6BqpBp4h5GamPQqcE_vr4-kXeOAJXByRZDElMzjHli2mqucVtlYadx_Um5Jda3oMv759FZx_pw5N2d7U7cM0A",
+              //   requestOptions
+              // )
+              //   .then((response) => response.json())
+              //   .then((result) => {
+              // setBase64Audio(
+              //   "data:audio/wav;base64," + result["audioContent"]
+              // );
+              //   })
+              //   .catch((error) => setTextInput(error));
+              tts_axios();
             }
           }}
         >
@@ -137,7 +179,9 @@ function Base64ToAudioUS() {
 
         <button onClick={() => navigate("/home")}>Home</button>
 
-        <button id="count_character">{count_character}</button>
+        <button id="count_character" onClick={() => setTextInput("")}>
+          {count_character}
+        </button>
       </div>
 
       <audio
