@@ -50,6 +50,9 @@ function Base64ToAudioUS() {
         setBase64Audio("data:audio/wav;base64," + res["audioContent"]);
       })
       .catch(function (error) {
+        if (textInput !== "") {
+          navigator.clipboard.writeText(textInput);
+        }
         setTextInput(error);
       });
   };
