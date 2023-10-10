@@ -8,6 +8,9 @@ import "./Base64ToAudioUS.css";
 function Base64ToAudioUS() {
   const navigate = useNavigate();
   const [textInput, setTextInput] = useState("");
+  const [textNote, setTextNote] = useState(
+    `vi-VN-Neural2-A\nvi-VN-Wavenet-C\nen-US-Polyglot-1\nen-US-Neural2-A\nen-US-Studio-M`
+  );
   const [base64Audio, setBase64Audio] = useState("");
   const [speed, setSpeed] = useState(1);
   const [languageCode, setLanguageCode] = useState("vi-VN");
@@ -185,6 +188,16 @@ function Base64ToAudioUS() {
         <button id="count_character" onClick={() => setTextInput("")}>
           {count_character}
         </button>
+
+        <textarea
+          rows={"6"}
+          cols={"6"}
+          placeholder={"Nhập vào đây Để nghe thử nha"}
+          value={textNote}
+          onChange={(e) => {
+            setTextNote(e.target.value);
+          }}
+        ></textarea>
       </div>
 
       <audio
