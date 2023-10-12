@@ -67,6 +67,59 @@ function App() {
         c = c.replaceAll("(Guitar Version)", "");
 
         setKQ(c);
+      } else if (idSelect === 7) {
+        // Tạo một đối tượng DOM từ đoạn mã HTML
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(text, "text/html");
+
+        // Trích xuất danh sách các phần tử li
+        const listItems = htmlDoc.querySelectorAll("ul li");
+        const initialArray = [];
+
+        // Duyệt qua từng phần tử li và trích xuất văn bản
+        listItems.forEach(function (item, index) {
+          if (
+            item.querySelectorAll('div[dir="auto"][style="text-align: start;"]')
+              .length
+          ) {
+            const a = item.querySelectorAll(
+              'div[dir="auto"][style="text-align: start;"]'
+            );
+
+            a.forEach(function (divElement) {
+              if (divElement.querySelector("span")) {
+                const childNodes = divElement.childNodes;
+                // Duyệt qua danh sách các nút con và in ra nội dung
+                for (var i = 0; i < childNodes.length; i++) {
+                  if (childNodes[i].nodeType === Node.ELEMENT_NODE) {
+                    // console.log('Element Node:', childNodes[i]);
+                  } else if (childNodes[i].nodeType === Node.TEXT_NODE) {
+                    // console.log('Text Node:', childNodes[i].textContent);
+                    initialArray.push(childNodes[i].textContent);
+                  }
+                }
+              } else {
+                const textContent = divElement.textContent;
+
+                // console.log(textContent + " ==================================== ");
+                initialArray.push(textContent);
+              }
+            });
+          }
+        });
+
+        // Sử dụng Set để loại bỏ các phần tử trùng lặp
+        const uniqueSet = new Set(initialArray);
+
+        // Chuyển Set thành một mảng
+        const uniqueArray = Array.from(uniqueSet);
+
+        // uniqueArray bây giờ chứa các phần tử không trùng lặp
+        let comment = "";
+        uniqueArray.forEach(function (divElement, index) {
+          comment += divElement + "\n";
+        });
+        setKQ(comment);
       }
     } else {
       setKQ("Bạn phải nhập nhé !");
@@ -101,6 +154,7 @@ function App() {
           <option value={4}>To Lowercase</option>
           <option value={5}>Lowercase Edit</option>
           <option value={6}>Music Comment</option>
+          <option value={7}>Get Comment</option>
         </select>
 
         <button onClick={() => navigate("/tts_json")}>tts</button>
