@@ -90,7 +90,7 @@ function App() {
               if (divElement.querySelector("span")) {
                 const childNodes = divElement.childNodes;
                 // Duyệt qua danh sách các nút con và in ra nội dung
-                for (var i = 0; i < childNodes.length; i++) {
+                for (let i = 0; i < childNodes.length; i++) {
                   if (childNodes[i].nodeType === Node.ELEMENT_NODE) {
                     // console.log('Element Node:', childNodes[i]);
                   } else if (childNodes[i].nodeType === Node.TEXT_NODE) {
@@ -134,9 +134,13 @@ function App() {
         placeholder={"Nhập vào đây nha"}
         value={textInput}
         onChange={(e) => {
-          let text = e.target.value;
+          const text = e.target.value;
           setTextInput(text);
-          handleString(text);
+          try {
+            handleString(text);
+          } catch (error) {
+            setKQ(error);
+          }
         }}
       ></textarea>
 
