@@ -160,6 +160,7 @@ function App() {
         <button onClick={() => navigate("/tts_json")}>tts</button>
         <button onClick={() => navigator.clipboard.writeText(kq)}>Copy</button>
         <button onClick={() => navigate("/home")}>Menu</button>
+        <button onClick={() => setTextInput("")}>Delete</button>
       </div>
 
       <textarea
