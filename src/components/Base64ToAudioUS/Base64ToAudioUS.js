@@ -175,7 +175,7 @@ function Base64ToAudioUS() {
           onClick={() => {
             navigator.clipboard.readText().then((clipboardText) => {
               setTextInput(clipboardText);
-              setCount_character(textInput.length);
+              setCount_character(clipboardText.length);
             });
           }}
         >
@@ -194,7 +194,13 @@ function Base64ToAudioUS() {
 
         <button onClick={() => navigate("/home")}>Home</button>
 
-        <button id="count_character" onClick={() => setTextInput("")}>
+        <button
+          id="count_character"
+          onClick={() => {
+            setTextInput("");
+            setCount_character(0);
+          }}
+        >
           {count_character}
         </button>
 
