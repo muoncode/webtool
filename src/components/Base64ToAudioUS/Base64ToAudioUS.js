@@ -175,6 +175,7 @@ function Base64ToAudioUS() {
           onClick={() => {
             navigator.clipboard.readText().then((clipboardText) => {
               setTextInput(clipboardText);
+              setCount_character(textInput.length);
             });
           }}
         >
