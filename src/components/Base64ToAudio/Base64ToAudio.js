@@ -90,6 +90,17 @@ function Base64ToAudio() {
         </button>
 
         <button
+          onClick={() => {
+            navigator.clipboard.readText().then((clipboardText) => {
+              setTextInput(clipboardText);
+            });
+          }}
+        >
+          Paste
+        </button>
+        <button onClick={() => setTextInput("")}>Delete</button>
+
+        <button
           onClick={() =>
             window.open(
               "https://www.gstatic.com/cloud-site-ux/text_to_speech/text_to_speech.min.html"

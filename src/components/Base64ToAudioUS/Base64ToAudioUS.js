@@ -171,7 +171,15 @@ function Base64ToAudioUS() {
         >
           Download Audio
         </button>
-        <button onClick={() => navigate("/tts_json")}>tts</button>
+        <button
+          onClick={() => {
+            navigator.clipboard.readText().then((clipboardText) => {
+              setTextInput(clipboardText);
+            });
+          }}
+        >
+          Paste
+        </button>
 
         <button
           onClick={() =>
@@ -192,7 +200,6 @@ function Base64ToAudioUS() {
         <textarea
           rows={"6"}
           cols={"6"}
-          placeholder={"Nhập vào đây Để nghe thử nha"}
           value={textNote}
           onChange={(e) => {
             setTextNote(e.target.value);
