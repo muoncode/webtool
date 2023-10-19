@@ -120,6 +120,13 @@ function App() {
           comment += divElement + "\n";
         });
         setKQ(comment);
+      } else if (idSelect === 8) {
+        const a = text.split("\n");
+        let b = "";
+        for (let index = 0; index < a.length; index++) {
+          b += a[index].toUpperCase() + "\n";
+        }
+        setKQ(b);
       }
     } else {
       setKQ("Bạn phải nhập nhé !");
@@ -159,6 +166,7 @@ function App() {
           <option value={5}>Lowercase Edit</option>
           <option value={6}>Music Comment</option>
           <option value={7}>Get Comment</option>
+          <option value={8}>ToUpperCase</option>
         </select>
 
         <button onClick={() => navigate("/tts_json")}>tts</button>
