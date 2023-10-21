@@ -1,5 +1,4 @@
 .container {
-  /* background-color: blue; */
 }
 
 textarea {
@@ -10,8 +9,10 @@ textarea {
 }
 
 .btnGroup {
+  height: 95vh;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btnGroup > input {
