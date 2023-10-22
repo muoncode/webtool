@@ -40,3 +40,32 @@ textarea {
   background-color: green;
   color: #fff;
 }
+
+@media only screen and (max-width: 740px) {
+  .container {
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .btnGroup {
+    height: auto;
+  }
+
+  textarea {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding: 10px;
+    width: 95%;
+    height: 20vh;
+  }
+
+  .btnGroup > input {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  audio {
+    margin-bottom: 6%;
+  }
+}
