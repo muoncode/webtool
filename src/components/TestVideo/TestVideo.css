@@ -1,0 +1,21 @@
+.tcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.testvideo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.testvideo > input {
+}
+
+.testvideo > video {
+  width: 640px;
+  height: 480px;
+}

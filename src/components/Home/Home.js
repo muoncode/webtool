@@ -32,6 +32,10 @@ export default function Home() {
       <button className="btn_getCmt" onClick={() => navigate("/webtool1")}>
         Test
       </button>
+
+      <button className="btn_getCmt" onClick={() => navigate("/testvideo")}>
+        Test Video
+      </button>
     </div>
   );
 }

@@ -12,6 +12,7 @@ import Home from "./components/Home/Home";
 import GetCommmentFromChat from "./components/GetCommmentFromChat/GetCommmentFromChat";
 import GetTextTranslate from "./components/GetTextTranslate/GetTextTranslate";
 import TranslateSubtitle from "./components/TranslateSubtitle/TranslateSubtitle";
+import TestVideo from "./components/TestVideo/TestVideo";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
   {
     path: "TranslateSubtitle/",
     element: <TranslateSubtitle />,
+  },
+  {
+    path: "testvideo/",
+    element: <TestVideo />,
   },
 ]);
 
