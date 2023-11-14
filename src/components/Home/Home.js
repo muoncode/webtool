@@ -36,6 +36,13 @@ export default function Home() {
       <button className="btn_getCmt" onClick={() => navigate("/testvideo")}>
         Test Video
       </button>
+
+      <button
+        className="btn_getCmt"
+        onClick={() => navigate("/ContinuousColorChange")}
+      >
+        Continuous Color Change
+      </button>
     </div>
   );
 }

@@ -1,0 +1,35 @@
+.ContinuousColorChange {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  transition: background-color 14s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContinuousColorChange > span {
+  font-size: 70px;
+  font-weight: bolder;
+  font-family: monospace;
+  font-style: italic;
+  animation: grow 10s ease-in-out infinite alternate;
+  animation-delay: 2s;
+}
+
+@keyframes grow {
+  0% {
+    font-size: 40px;
+    color: black;
+  }
+
+  50% {
+    font-size: 80px;
+    color: transparent;
+  }
+
+  100% {
+    font-size: 40px;
+    color: black;
+  }
+}

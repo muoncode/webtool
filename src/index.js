@@ -13,6 +13,7 @@ import GetCommmentFromChat from "./components/GetCommmentFromChat/GetCommmentFro
 import GetTextTranslate from "./components/GetTextTranslate/GetTextTranslate";
 import TranslateSubtitle from "./components/TranslateSubtitle/TranslateSubtitle";
 import TestVideo from "./components/TestVideo/TestVideo";
+import ContinuousColorChange from "./components/ContinuousColorChange/ContinuousColorChange";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
   {
     path: "testvideo/",
     element: <TestVideo />,
+  },
+  {
+    path: "ContinuousColorChange/",
+    element: <ContinuousColorChange />,
   },
 ]);
 
