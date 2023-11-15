@@ -33,3 +33,130 @@
     color: black;
   }
 }
+
+.musicContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 2s ease-in-out;
+}
+
+.musicPlayer {
+  width: 50%;
+  height: 60vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 30px;
+  background-color: transparent;
+  box-shadow: 0px 0px 10px 1px black;
+  transition: box-shadow 4s ease;
+  /* background-image: url("https://img.freepik.com/premium-photo/programming-code-abstract-technology-background-software-developer-computer-script_34663-31.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699920000&semt=ais"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imgCover {
+  width: 27%;
+  height: 50%;
+  /* background-color: red; */
+  border-radius: 100%;
+  border: 1px solid white;
+  /* animation: xoayTron 300s ease infinite; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  /* font-size: 70px;
+  font-weight: bolder;
+  font-family: monospace;
+  font-style: italic;
+  text-shadow: 2px 4px 3px grey;
+  animation: grow 10s ease-in-out infinite alternate; */
+}
+
+.imgCover > span {
+  /* animation: xoayTron 300s ease infinite; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background-image: url("https://newsmd2fr.keeng.vn/tiin/archive/imageslead/2023/11/15/1etmbsnf3q5vbprzhkn617nh7kh9mr34.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mediaControl {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mediaControl > div:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.musicTime {
+  width: 96%;
+  margin: 0;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  accent-color: orange;
+}
+
+.musicTime::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: #664aff;
+  border-radius: 50%;
+  border: 10px solid red;
+  cursor: pointer;
+}
+
+.iconControls {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.iconControls > svg {
+  cursor: pointer;
+}
+
+@keyframes xoayTron {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nhanManh {
+  0% {
+    height: 2vh;
+  }
+  50% {
+    height: 6vh;
+  }
+  100% {
+    height: 2vh;
+  }
+}
