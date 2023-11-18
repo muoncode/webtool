@@ -62,11 +62,11 @@
 }
 
 .imgCover {
-  width: 27%;
-  height: 50%;
+  width: 100%;
+  height: 40%;
   /* background-color: red; */
-  border-radius: 100%;
-  border: 1px solid white;
+  /* border-radius: 100%; */
+
   /* animation: xoayTron 300s ease infinite; */
 
   display: flex;
@@ -83,14 +83,15 @@
 }
 
 .imgCover > span {
-  /* animation: xoayTron 300s ease infinite; */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  animation: xoayTron 400s ease infinite;
+  border: 4px solid white;
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
+  width: 22%;
   height: 100%;
   border-radius: 100px;
-  background-image: url("https://newsmd2fr.keeng.vn/tiin/archive/imageslead/2023/11/15/1etmbsnf3q5vbprzhkn617nh7kh9mr34.jpg");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9c7z2flVxeFQjjliQ4hH89VHInr_gWLwkQ&usqp=CAU");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -116,6 +117,7 @@
   outline: none;
   border: none;
   accent-color: orange;
+  cursor: grab;
 }
 
 .musicTime::-webkit-slider-thumb {
@@ -125,7 +127,7 @@
   background: #664aff;
   border-radius: 50%;
   border: 10px solid red;
-  cursor: pointer;
+  cursor: grab;
 }
 
 .iconControls {
