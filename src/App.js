@@ -8,6 +8,7 @@ function App() {
   const [textInput, setTextInput] = useState("");
   const [kq, setKQ] = useState("");
   const [idService, setIdService] = useState(4);
+  const [message, setMessage] = useState("");
 
   const handleString = (text) => {
     const idSelect = Number(idService);
@@ -170,9 +171,20 @@ function App() {
         </select>
 
         <button onClick={() => navigate("/tts_json")}>tts</button>
-        <button onClick={() => navigator.clipboard.writeText(kq)}>Copy</button>
+        <button
+          onClick={() => {
+            navigator.clipboard.writeText(kq);
+            setMessage("Đã copy văn bản");
+            setTimeout(() => {
+              setMessage("");
+            }, 1000);
+          }}
+        >
+          Copy
+        </button>
         <button onClick={() => navigate("/home")}>Menu</button>
         <button onClick={() => setTextInput("")}>Delete</button>
+        <span className="messageText">{message}</span>
       </div>
 
       <textarea

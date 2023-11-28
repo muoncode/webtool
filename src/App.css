@@ -65,3 +65,15 @@ select > option {
 input {
   margin-bottom: 15px;
 }
+
+.messageText {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+
+  color: whitesmoke;
+  font-size: 18px;
+  text-align: center;
+}
