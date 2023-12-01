@@ -189,7 +189,7 @@ function App() {
             });
           }}
         >
-          Menu
+          Paste
         </button>
         <button onClick={() => navigate("/home")}>Menu</button>
 
