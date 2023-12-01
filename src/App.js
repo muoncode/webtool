@@ -128,6 +128,14 @@ function App() {
           b += a[index].toUpperCase() + "\n";
         }
         setKQ(b);
+      } else if (idSelect === 9) {
+        let nameFile = text;
+        nameFile = nameFile.replaceAll("_", "");
+        nameFile = nameFile.replaceAll("(", "");
+        nameFile = nameFile.replaceAll(")", "");
+        nameFile = nameFile.replaceAll(" ", "");
+        nameFile = nameFile.replaceAll("-", "");
+        setKQ(nameFile);
       }
     } else {
       setKQ("Bạn phải nhập nhé !");
@@ -168,6 +176,7 @@ function App() {
           <option value={6}>Music Comment</option>
           <option value={7}>Get Comment</option>
           <option value={8}>ToUpperCase</option>
+          <option value={9}>Epidemicsound</option>
         </select>
 
         <button onClick={() => navigate("/tts_json")}>tts</button>
