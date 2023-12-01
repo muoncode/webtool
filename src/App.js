@@ -182,7 +182,17 @@ function App() {
         >
           Copy
         </button>
+        <button
+          onClick={() => {
+            navigator.clipboard.readText().then((clipboardText) => {
+              setTextInput(clipboardText);
+            });
+          }}
+        >
+          Menu
+        </button>
         <button onClick={() => navigate("/home")}>Menu</button>
+
         <button onClick={() => setTextInput("")}>Delete</button>
         <span className="messageText">{message}</span>
       </div>
