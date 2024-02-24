@@ -56,6 +56,7 @@ function App() {
         }
         setKQ(b);
       } else if (idSelect === 6) {
+        // Lấy đoạn thời gian
         let c = "";
 
         text = text.replaceAll("  -  ES_", " ");
@@ -69,6 +70,7 @@ function App() {
 
         setKQ(c);
       } else if (idSelect === 7) {
+        // Lấy bình luận Facebook
         // Tạo một đối tượng DOM từ đoạn mã HTML
         const parser = new DOMParser();
         const htmlDoc = parser.parseFromString(text, "text/html");
