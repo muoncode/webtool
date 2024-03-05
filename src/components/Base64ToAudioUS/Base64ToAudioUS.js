@@ -104,6 +104,13 @@ function Base64ToAudioUS() {
           value={voiceName}
         />
 
+        <button onClick={() => {
+          const a = prompt("Input :");
+          const b = prompt("Replace :");
+
+          setTextInput(textInput.replaceAll(a, b));
+        }}> replace </button>
+
         <button
           onClick={() => {
             const regExp = /[a-zA-Z]/g;
@@ -182,13 +189,6 @@ function Base64ToAudioUS() {
         >
           Paste
         </button>
-
-        <button onClick={() => {
-          const a = prompt("Input :");
-          const b = prompt("Replace :");
-
-          setTextInput(textInput.replaceAll(a, b));
-        }}> replace </button>
 
         <button
           onClick={() =>
