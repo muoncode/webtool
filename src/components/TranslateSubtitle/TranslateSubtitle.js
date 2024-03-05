@@ -1,18 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import srtParser2 from "srt-parser-2";
-// import axios from "axios";
+import axios from "axios";
+import { saveAs } from "file-saver";
 
 import "./TranslateSubtitle.css";
 
 export default function TranslateSubtitle() {
   const navigate = useNavigate();
-  // const [subtitles, setSubtitles] = useState([]);
+  const [subtitle_list, setSubtitle_list] = useState([]);
   const [file, setFile] = useState();
   const [textInput, setTextInput] = useState("");
   //   const [comments, setComments] = useState([]);
   const [isTextarea, setIsTextarea] = useState(true);
   //   const [isComments, setIsComments] = useState(false);
+  const [speed, setSpeed] = useState(1);
+  const [languageCode, setLanguageCode] = useState("vi-VN");
+  const [voiceName, setVoiceName] = useState("vi-VN-Neural2-D");
 
   const getFile = (event) => {
     if (event.target.files[0]) {
@@ -27,12 +31,88 @@ export default function TranslateSubtitle() {
       const fileContent = e.target.result;
       const parser = new srtParser2();
       const srt_array = parser.fromSrt(fileContent);
-      let subtitles = "";
+      let subtitle = "";
       for (let index = 0; index < srt_array.length; index++) {
-        subtitles += srt_array[index]["text"] + " ";
+        subtitle += srt_array[index]["text"] + " ";
+        subtitle_list.push(srt_array[index]["text"]);
       }
-      setTextInput(subtitles);
+      setTextInput(subtitle);
     };
+  };
+
+  const text_to_speech_Subtitle = () => {
+    let isMapFinished = false;
+
+    for (let index = 0; index < subtitle_list.length; index++) {
+      setTimeout(() => {
+        const data = JSON.stringify({
+          audioConfig: {
+            audioEncoding: "LINEAR16",
+            effectsProfileId: ["small-bluetooth-speaker-class-device"],
+            pitch: 0,
+            speakingRate: speed,
+          },
+          input: {
+            text: subtitle_list[index],
+          },
+          voice: {
+            languageCode: languageCode,
+            name: voiceName,
+          },
+        });
+
+        const config = {
+          method: "post",
+          url: "https://cxl-services.appspot.com/proxy?url=https://texttospeech.googleapis.com/v1beta1/text:synthesize&token=03ANYolquf_efs0-vgXjklkw2xrTL5osvzLZz3WBnXKWr6aZlSPtqNymu-0xRzreSsDOhU20MaC5jJ56QyUxQ2-jGgHQO5oBG2JL0izwQb6FAEYF_jFuBDPhDjOu4uWHSSCeh1V6Eer35Yf7QglJ9TT2bbhLweUlN3M5jdg2hrPqTBNNAa28qGe6O7vKKje08VUVloNnc5oRqx1EAgooWaVFsNOUo0EFIVd4ADUNlIp54KU6rDL2VEeswuw07SZgZCjJugcbxseDNU-89knsc5uSy_rtYVQal817IybuHIiS-MWxf4Nsfs25XC7slGgffu8HsQgL5B0tGUq1nzuQotUyW19jggUbnAE9t3VwrP8FBR6fyIdyHtMyUo4qvx83TvA-AmpxmxWapHTaEH1NFilnYCjpg_nUiLSq-KbJFOTXCGfC5AsPjp-v4ndTwTqAGnFWzNWfnwy4Rjr6BqpBp4h5GamPQqcE_vr4-kXeOAJXByRZDElMzjHli2mqucVtlYadx_Um5Jda3oMv759FZx_pw5N2d7U7cM0A",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data: data,
+        };
+
+        axios(config)
+          .then(function (response) {
+            const res = response.data;
+
+            // Giải mã base64 thành binary data
+            const binaryData = atob(res["audioContent"]);
+
+            // Chuyển binary data thành mảng các byte
+            const byteArray = new Uint8Array(binaryData.length);
+            for (let i = 0; i < binaryData.length; i++) {
+              byteArray[i] = binaryData.charCodeAt(i);
+            }
+
+            // Tạo blob từ mảng byte và thiết lập kiểu MIME
+            const blob = new Blob([byteArray], { type: 'audio/wav' });
+
+            let currentTime = new Date()
+              .toLocaleString()
+              .replace(/[/:]/g, "");
+            currentTime = currentTime.replace(" ", "");
+            const audioName = `${currentTime + index}.wav`;
+            // Lưu tệp WAV về máy
+            saveAs(blob, audioName);
+          })
+          .catch(function (error) {
+            if (textInput !== "") {
+              navigator.clipboard.writeText(textInput);
+            }
+            setTextInput(error);
+            setSubtitle_list([]);
+          });
+      }, 5000);
+    };
+
+    if (isMapFinished) {
+      console.log("đã kết thúc");
+      setSubtitle_list([]);
+
+      isMapFinished = false;
+    } else {
+      console.log("chưa kết thúc");
+    }
+    // --------------------------------------------------------------
   };
 
   return (
@@ -51,35 +131,49 @@ export default function TranslateSubtitle() {
         ) : null}
 
         <div className="btnGroup">
+          <input
+            placeholder="Speed"
+            type={"number"}
+            onChange={(e) => {
+              const value = e.target.value;
+              setSpeed(Number(value));
+            }}
+            value={speed}
+          />
+
+          <input
+            placeholder="LanguageCode"
+            type={"text"}
+            onChange={(e) => {
+              const value = e.target.value;
+              setLanguageCode(value);
+            }}
+            value={languageCode}
+          />
+
+          <input
+            placeholder="Voice Name"
+            type={"text"}
+            onChange={(e) => {
+              const value = e.target.value;
+              setVoiceName(value);
+            }}
+            value={voiceName}
+          />
+
+          <input type="file" onChange={getFile} />
+
           <button
             onClick={() => {
-              // const a = textInput.split("\n");
-              // const b = [];
-
-              // for (let index = 0; index < a.length; index++) {
-              //   if (a[index].charAt(0) === '"') {
-              //     a[index] = a[index].replace('"', "");
-              //   }
-              //   if (a[index].endsWith('"')) {
-              //     a[index] = a[index].slice(0, -1);
-              //   }
-
-              //   a[index] = a[index].replace(' "', "");
-              //   const texts = a[index].split(":");
-              //   if (texts[1] !== undefined && texts[1].charAt(0) === ' "') {
-              //     texts[1] = texts[1].replace(' "', "");
-              //   }
-
-              //   b.push({ id: index, text1: texts[0], text2: texts[1] });
-              // }
-
-              //   setComments(b);
-              // setIsTextarea(false);
-              //   setIsComments(true);
               get_SUb_title();
             }}
           >
             Ok
+          </button>
+
+          <button onClick={text_to_speech_Subtitle} > Download Audios </button>
+          <button onClick={() => navigator.clipboard.writeText(textInput)}>
+            Copy
           </button>
 
           <button
@@ -91,11 +185,7 @@ export default function TranslateSubtitle() {
             Show Input
           </button>
 
-          <button onClick={() => navigator.clipboard.writeText(textInput)}>
-            Copy
-          </button>
           <button onClick={() => navigate("/home")}>Home</button>
-          <input type="file" onChange={getFile} />
         </div>
       </div>
     </div>

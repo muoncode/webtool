@@ -70,10 +70,22 @@ button:active {
   cursor: pointer;
 }
 
+.btnGroup > input{
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: monospace;
+}
+
 .btnGroup > input[type="file"] {
   color: aqua;
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  /* font-family: sans-serif; */
+  font-weight: bolder;
+  font-style: italic;
+  /* background-color: #000; */
 }
 
 @media only screen and (max-width: 740px) {
