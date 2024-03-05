@@ -171,6 +171,7 @@ function Base64ToAudioUS() {
         >
           Download Audio
         </button>
+
         <button
           onClick={() => {
             navigator.clipboard.readText().then((clipboardText) => {
@@ -181,6 +182,13 @@ function Base64ToAudioUS() {
         >
           Paste
         </button>
+
+        <button onClick={() => {
+          const a = prompt("Input :");
+          const b = prompt("Replace :");
+
+          setTextInput(textInput.replaceAll(a, b));
+        }}> replace </button>
 
         <button
           onClick={() =>
