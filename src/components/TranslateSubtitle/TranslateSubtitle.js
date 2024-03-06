@@ -41,10 +41,8 @@ export default function TranslateSubtitle() {
   };
 
   const text_to_speech_Subtitle = () => {
-    let isMapFinished = false;
-
-    for (let index = 0; index < subtitle_list.length; index++) {
-      setTimeout(() => {
+    if (subtitle_list.length !== 0) {
+      for (let index = 0; index < subtitle_list.length; index++) {
         const data = JSON.stringify({
           audioConfig: {
             audioEncoding: "LINEAR16",
@@ -86,11 +84,11 @@ export default function TranslateSubtitle() {
             // Tạo blob từ mảng byte và thiết lập kiểu MIME
             const blob = new Blob([byteArray], { type: 'audio/wav' });
 
-            let currentTime = new Date()
-              .toLocaleString()
-              .replace(/[/:]/g, "");
-            currentTime = currentTime.replace(" ", "");
-            const audioName = `${currentTime + index}.wav`;
+            // let currentTime = new Date()
+            //   .toLocaleString()
+            //   .replace(/[/:]/g, "");
+            // currentTime = currentTime.replace(" ", "");
+            const audioName = `${index}.wav`;
             // Lưu tệp WAV về máy
             saveAs(blob, audioName);
           })
@@ -101,16 +99,14 @@ export default function TranslateSubtitle() {
             setTextInput(error);
             setSubtitle_list([]);
           });
-      }, 5000);
-    };
 
-    if (isMapFinished) {
-      console.log("đã kết thúc");
-      setSubtitle_list([]);
-
-      isMapFinished = false;
+        if (index === subtitle_list.length - 1) {
+          setSubtitle_list([]);
+          setTextInput("Đã chuyển phụ đề thành FILE âm thanh. Xong !");
+        }
+      };
     } else {
-      console.log("chưa kết thúc");
+      setTextInput("Chưa có dữ liệu phụ đề");
     }
     // --------------------------------------------------------------
   };
