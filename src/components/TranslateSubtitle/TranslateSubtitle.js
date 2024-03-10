@@ -111,6 +111,72 @@ export default function TranslateSubtitle() {
     // --------------------------------------------------------------
   };
 
+  const text_to_speech_Lines = () => {
+    const line_list = textInput.split("\n");
+    for (let index = 0; index < line_list.length; index++) {
+      const data = JSON.stringify({
+        audioConfig: {
+          audioEncoding: "LINEAR16",
+          effectsProfileId: ["small-bluetooth-speaker-class-device"],
+          pitch: 0,
+          speakingRate: speed,
+        },
+        input: {
+          text: line_list[index],
+        },
+        voice: {
+          languageCode: languageCode,
+          name: voiceName,
+        },
+      });
+
+      const config = {
+        method: "post",
+        url: "https://cxl-services.appspot.com/proxy?url=https://texttospeech.googleapis.com/v1beta1/text:synthesize&token=03ANYolquf_efs0-vgXjklkw2xrTL5osvzLZz3WBnXKWr6aZlSPtqNymu-0xRzreSsDOhU20MaC5jJ56QyUxQ2-jGgHQO5oBG2JL0izwQb6FAEYF_jFuBDPhDjOu4uWHSSCeh1V6Eer35Yf7QglJ9TT2bbhLweUlN3M5jdg2hrPqTBNNAa28qGe6O7vKKje08VUVloNnc5oRqx1EAgooWaVFsNOUo0EFIVd4ADUNlIp54KU6rDL2VEeswuw07SZgZCjJugcbxseDNU-89knsc5uSy_rtYVQal817IybuHIiS-MWxf4Nsfs25XC7slGgffu8HsQgL5B0tGUq1nzuQotUyW19jggUbnAE9t3VwrP8FBR6fyIdyHtMyUo4qvx83TvA-AmpxmxWapHTaEH1NFilnYCjpg_nUiLSq-KbJFOTXCGfC5AsPjp-v4ndTwTqAGnFWzNWfnwy4Rjr6BqpBp4h5GamPQqcE_vr4-kXeOAJXByRZDElMzjHli2mqucVtlYadx_Um5Jda3oMv759FZx_pw5N2d7U7cM0A",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: data,
+      };
+
+      axios(config)
+        .then(function (response) {
+          const res = response.data;
+
+          // Giải mã base64 thành binary data
+          const binaryData = atob(res["audioContent"]);
+
+          // Chuyển binary data thành mảng các byte
+          const byteArray = new Uint8Array(binaryData.length);
+          for (let i = 0; i < binaryData.length; i++) {
+            byteArray[i] = binaryData.charCodeAt(i);
+          }
+
+          // Tạo blob từ mảng byte và thiết lập kiểu MIME
+          const blob = new Blob([byteArray], { type: 'audio/wav' });
+
+          // let currentTime = new Date()
+          //   .toLocaleString()
+          //   .replace(/[/:]/g, "");
+          // currentTime = currentTime.replace(" ", "");
+          const audioName = `${index}.wav`;
+          // Lưu tệp WAV về máy
+          saveAs(blob, audioName);
+        })
+        .catch(function (error) {
+          if (textInput !== "") {
+            navigator.clipboard.writeText(textInput);
+          }
+          setTextInput(error);
+        });
+
+      if (index === line_list.length - 1) {
+        setTextInput("Đã chuyển Từng Dòng thành FILE âm thanh. Xong !");
+      }
+    };
+    // ---------------------------------------------------------------         
+  };
+
   return (
     <div>
       <div className="container_get_text_translate">
@@ -168,6 +234,8 @@ export default function TranslateSubtitle() {
           </button>
 
           <button onClick={text_to_speech_Subtitle} > Download Audios </button>
+          <button onClick={text_to_speech_Lines} > Download Audio Lines </button>
+
           <button onClick={() => navigator.clipboard.writeText(textInput)}>
             Copy
           </button>
