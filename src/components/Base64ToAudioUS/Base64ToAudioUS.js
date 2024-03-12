@@ -68,7 +68,7 @@ function Base64ToAudioUS() {
         placeholder={"Nhập vào đây Để nghe thử nha"}
         value={textInput}
         onChange={(e) => {
-          setTextInput(e.target.value);
+          setTextInput(e.target.value.toLowerCase());
           setCount_character(e.target.value.length);
         }}
       ></textarea>
