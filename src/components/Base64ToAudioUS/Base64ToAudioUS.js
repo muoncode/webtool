@@ -26,7 +26,7 @@ function Base64ToAudioUS() {
         speakingRate: speed,
       },
       input: {
-        text: textInput,
+        text: textInput.toLowerCase(),
       },
       voice: {
         languageCode: languageCode,
@@ -68,7 +68,7 @@ function Base64ToAudioUS() {
         placeholder={"Nhập vào đây Để nghe thử nha"}
         value={textInput}
         onChange={(e) => {
-          setTextInput(e.target.value.toLowerCase());
+          setTextInput(e.target.value);
           setCount_character(e.target.value.length);
         }}
       ></textarea>
