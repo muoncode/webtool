@@ -56,7 +56,7 @@ function Base64ToAudioUS() {
         if (textInput !== "") {
           navigator.clipboard.writeText(textInput);
         }
-        setTextInput(error);
+        setTextInput(error + "\n\nGặp lỗi nên không thể Chuyển văn bản sang Giọng Nói");
       });
   };
 
