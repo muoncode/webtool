@@ -11,9 +11,9 @@ import Base64ToAudioUS from "./components/Base64ToAudioUS/Base64ToAudioUS";
 import Home from "./components/Home/Home";
 import GetCommmentFromChat from "./components/GetCommmentFromChat/GetCommmentFromChat";
 import GetTextTranslate from "./components/GetTextTranslate/GetTextTranslate";
-import TranslateSubtitle from "./components/TranslateSubtitle/TranslateSubtitle";
 import TestVideo from "./components/TestVideo/TestVideo";
 import ContinuousColorChange from "./components/ContinuousColorChange/ContinuousColorChange";
+import GetSubtitle from "./components/GetSubtitle/GetSubtitle";
 
 const router = createBrowserRouter([
   {
@@ -64,8 +64,8 @@ const router = createBrowserRouter([
     element: <GetTextTranslate />,
   },
   {
-    path: "TranslateSubtitle/",
-    element: <TranslateSubtitle />,
+    path: "GetSubtitle/",
+    element: <GetSubtitle />,
   },
   {
     path: "testvideo/",

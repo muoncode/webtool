@@ -4,9 +4,9 @@ import srtParser2 from "srt-parser-2";
 import axios from "axios";
 import { saveAs } from "file-saver";
 
-import "./TranslateSubtitle.css";
+import "./GetSubtitle.css";
 
-export default function TranslateSubtitle() {
+export default function GetSubtitle() {
   const navigate = useNavigate();
   const [subtitle_list, setSubtitle_list] = useState([]);
   const [file, setFile] = useState();
@@ -25,6 +25,10 @@ export default function TranslateSubtitle() {
   };
 
   const get_SUb_title = () => {
+    if (textInput.length === 0) {
+      alert("Bạn chưa chọn FILE nha!");
+      return;
+    }
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = (e) => {
@@ -112,6 +116,10 @@ export default function TranslateSubtitle() {
   };
 
   const text_to_speech_Lines = () => {
+    if (textInput.length === 0) {
+      alert("Cần nhập văn bản hoặc PHỤ ĐỀ nha!")
+      return;
+    }
     const line_list = textInput.split("\n");
     for (let index = 0; index < line_list.length; index++) {
       const data = JSON.stringify({

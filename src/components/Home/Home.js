@@ -10,9 +10,9 @@ export default function Home() {
     <div className="container_home">
       <button
         className="btn_getCmt"
-        onClick={() => navigate("/TranslateSubtitle")}
+        onClick={() => navigate("/GetSubtitle")}
       >
-        Translate Subtitle
+        Get Subtitle
       </button>
       <button className="btn_getCmt" onClick={() => navigate("/getcommment")}>
         Get Comments
