@@ -17,7 +17,7 @@ function DownloadImageFromURL() {
         }
         try {
             const urls = textInput.split("\n");
-            console.log(urls);
+
             for (let index = 0; index < urls.length; index++) {
                 if (urls[index] !== "") {
                     const imageUrl = urls[index];
@@ -36,7 +36,7 @@ function DownloadImageFromURL() {
             if (textInput !== "") {
                 navigator.clipboard.writeText(textInput);
             }
-            setTextInput(`Error downloading image: ${error}`);
+            setTextInput(`Error downloading image: \n${error}`);
         }
     };
 
