@@ -14,6 +14,7 @@ import GetTextTranslate from "./components/GetTextTranslate/GetTextTranslate";
 import TestVideo from "./components/TestVideo/TestVideo";
 import ContinuousColorChange from "./components/ContinuousColorChange/ContinuousColorChange";
 import GetSubtitle from "./components/GetSubtitle/GetSubtitle";
+import DownloadImageFromURL from "./components/DownloadImageFromURL/DownloadImageFromURL";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
   {
     path: "ContinuousColorChange/",
     element: <ContinuousColorChange />,
+  },
+  {
+    path: "DownloadImageFromURL/",
+    element: <DownloadImageFromURL />,
   },
 ]);
 

@@ -20,6 +20,7 @@ export default function Home() {
       <button className="btn_getCmt" onClick={() => navigate("/gettranslate")}>
         Get Text Translate
       </button>
+
       <button className="btn_getCmt" onClick={() => navigate("/webtool")}>
         Edit text
       </button>
@@ -42,6 +43,10 @@ export default function Home() {
         onClick={() => navigate("/ContinuousColorChange")}
       >
         Continuous Color Change
+      </button>
+
+      <button className="btn_getCmt" onClick={() => navigate("/DownloadImageFromURL")}>
+        Download Image From URL
       </button>
     </div>
   );
