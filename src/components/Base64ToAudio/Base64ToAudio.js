@@ -5,7 +5,9 @@ import { saveAs } from "file-saver";
 import "./Base64ToAudio.css";
 
 function Base64ToAudio() {
+
   const navigate = useNavigate();
+
   const [base64Audio, setBase64Audio] = useState("");
   const [textInput, setTextInput] = useState(
     JSON.stringify({
@@ -98,6 +100,7 @@ function Base64ToAudio() {
         >
           Paste
         </button>
+
         <button onClick={() => setTextInput("")}>Delete</button>
 
         <button

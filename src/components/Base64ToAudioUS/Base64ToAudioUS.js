@@ -6,7 +6,9 @@ import axios from "axios";
 import "./Base64ToAudioUS.css";
 
 function Base64ToAudioUS() {
+
   const navigate = useNavigate();
+
   const [textInput, setTextInput] = useState("");
   const [textNote, setTextNote] = useState(
     `vi-VN-Neural2-A\nvi-VN-Wavenet-C\nen-US-Polyglot-1\nen-US-Neural2-A\nen-US-Studio-M\nen-AU-Polyglot-1\nen-AU-Neural2-A`
@@ -16,13 +18,14 @@ function Base64ToAudioUS() {
   const [languageCode, setLanguageCode] = useState("vi-VN");
   const [voiceName, setVoiceName] = useState("vi-VN-Neural2-D");
   const [count_character, setCount_character] = useState(0);
+  const [pitch, setPitch] = useState(0);
 
   const tts_axios = () => {
     const data = JSON.stringify({
       audioConfig: {
         audioEncoding: "LINEAR16",
         effectsProfileId: ["small-bluetooth-speaker-class-device"],
-        pitch: 0,
+        pitch: pitch,
         speakingRate: speed,
       },
       input: {
@@ -74,6 +77,16 @@ function Base64ToAudioUS() {
       ></textarea>
 
       <div className="btnGroup">
+        <input
+          placeholder="Pitch"
+          type={"text"}
+          onChange={(e) => {
+            const value = e.target.value;
+            setPitch(value);
+          }}
+          value={pitch}
+        />
+
         <input
           placeholder="Speed"
           type={"number"}
