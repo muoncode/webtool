@@ -110,7 +110,7 @@ function Base64ToAudio() {
             )
           }
         >
-          Google TTS
+          Web TTS
         </button>
 
         <button onClick={() => navigate("/tts_us")}>TTS US</button>

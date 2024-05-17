@@ -210,7 +210,7 @@ function Base64ToAudioUS() {
             )
           }
         >
-          Google TTS
+          Web TTS
         </button>
 
         <button onClick={() => navigate("/home")}>Home</button>
