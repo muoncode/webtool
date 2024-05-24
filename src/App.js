@@ -10,6 +10,13 @@ function App() {
   const [idService, setIdService] = useState(4);
   const [message, setMessage] = useState("");
 
+  const thong__bao = (text) => {
+    setMessage(text);
+    setTimeout(() => {
+      setMessage("");
+    }, 1000);
+  };
+
   const handleString = (text) => {
     const idSelect = Number(idService);
     if (text !== "") {
@@ -138,6 +145,11 @@ function App() {
         nameFile = nameFile.replaceAll(" ", "");
         nameFile = nameFile.replaceAll("-", "");
         setKQ(nameFile);
+      } else if (idSelect === 10) {
+        // Loại bỏ các Hashtag giống nhau
+        const uniqueString = [...new Set(text.split(' '))].join(' ');
+        setKQ(uniqueString);
+        thong__bao("Đã xóa các Hashtag trùng lặp");
       }
     } else {
       setKQ("Bạn phải nhập nhé !");
@@ -179,9 +191,11 @@ function App() {
           <option value={7}>Get Comment</option>
           <option value={8}>ToUpperCase</option>
           <option value={9}>Epidemicsound</option>
+          <option value={10}>same removal</option>
         </select>
 
         <button onClick={() => navigate("/tts_json")}>tts</button>
+
         <button
           onClick={() => {
             navigator.clipboard.writeText(kq);
@@ -193,6 +207,7 @@ function App() {
         >
           Copy
         </button>
+
         <button
           onClick={() => {
             navigator.clipboard.readText().then((clipboardText) => {
@@ -202,6 +217,7 @@ function App() {
         >
           Paste
         </button>
+
         <button onClick={() => navigate("/home")}>Menu</button>
 
         <button onClick={() => setTextInput("")}>Delete</button>
