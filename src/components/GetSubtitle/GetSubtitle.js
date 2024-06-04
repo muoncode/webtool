@@ -25,7 +25,7 @@ export default function GetSubtitle() {
   };
 
   const get_SUb_title = () => {
-    if (textInput.length === 0) {
+    if (file) {
       alert("Bạn chưa chọn FILE nha!");
       return;
     }
