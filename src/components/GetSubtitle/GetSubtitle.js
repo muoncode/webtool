@@ -25,10 +25,10 @@ export default function GetSubtitle() {
   };
 
   const get_SUb_title = () => {
-    if (file) {
-      alert("Bạn chưa chọn FILE nha!");
-      return;
-    }
+    // if (file) {
+    //   alert("Bạn chưa chọn FILE nha!");
+    //   return;
+    // }
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = (e) => {
