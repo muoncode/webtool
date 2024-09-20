@@ -40,6 +40,9 @@ function Base64ToAudio() {
       ></textarea>
 
       <div className="btnGroup_tts">
+
+      <button onClick={() => setBase64Audio(textInput.slice(1, -1))}>Audio Base64</button>
+
         <button
           onClick={() => {
             const regExp = /[a-zA-Z]/g;
