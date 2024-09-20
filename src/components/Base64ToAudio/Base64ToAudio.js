@@ -30,8 +30,8 @@ function Base64ToAudio() {
   return (
     <div className="container_base64_to_audio">
       <textarea
-        rows={"34"}
-        cols={"120"}
+        rows={"36"}
+        cols={"110"}
         placeholder={"Nhập vào đây nha"}
         value={textInput}
         onChange={(e) => {
