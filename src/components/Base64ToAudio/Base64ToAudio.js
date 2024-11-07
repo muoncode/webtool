@@ -41,7 +41,13 @@ function Base64ToAudio() {
 
       <div className="btnGroup_tts">
 
-      <button onClick={() => setBase64Audio(textInput.slice(1, -1))}>Audio Base64</button>
+      <button onClick={() => {
+        if (textInput[0] === "\"") {
+          setBase64Audio(textInput.slice(1, -1));
+        } else {
+          setBase64Audio(textInput);
+        }
+      }}>Audio Base64</button>
 
         <button
           onClick={() => {
