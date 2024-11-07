@@ -178,6 +178,15 @@ function App() {
         <select
           value={idService}
           onChange={(e) => {
+            if (e.target.value == 11) {
+              let result = '';
+              for (let i = 0; i < 20; i++) {
+                result += Math.floor(Math.random() * 10); // Random digit from 0 to 9
+              }
+              setKQ(result);
+              thong__bao("Đã tạo chuỗi số Ngẫu Nhiên ... !");
+              return;
+            }
             setIdService(e.target.value);
           }}
         >
@@ -192,6 +201,7 @@ function App() {
           <option value={8}>ToUpperCase</option>
           <option value={9}>Epidemicsound</option>
           <option value={10}>same removal</option>
+          <option value={11}>Random Number</option>
         </select>
 
         <button onClick={() => navigate("/tts_json")}>tts</button>
@@ -230,7 +240,7 @@ function App() {
         cols={"60"}
         placeholder={"Xem kết quả ở đây"}
         value={kq !== "" ? kq : ""}
-        onChange={() => {}}
+        onChange={() => { }}
       ></textarea>
     </div>
   );
