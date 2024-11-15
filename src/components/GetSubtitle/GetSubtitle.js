@@ -192,7 +192,7 @@ export default function GetSubtitle() {
           <textarea
             rows={"30"}
             cols={"60"}
-            placeholder={"Tiêu đề"}
+            placeholder={"Phụ đề"}
             value={textInput}
             onChange={(e) => {
               setTextInput(e.target.value);
@@ -240,6 +240,17 @@ export default function GetSubtitle() {
           >
             Ok
           </button>
+
+          <button onClick={() => {
+            const parser = new srtParser2();
+            const srt_array = parser.fromSrt(fileContent);
+            let subtitle = "";
+            for (let index = 0; index < srt_array.length; index++) {
+              subtitle += srt_array[index]["text"] + " ";
+              // subtitle_list.push(srt_array[index]["text"]);
+            }
+            setTextInput(subtitle);
+          }} >Ok Sub</button>
 
           <button onClick={text_to_speech_Subtitle} > Download Audios </button>
           <button onClick={text_to_speech_Lines} > Download Audio Lines </button>
