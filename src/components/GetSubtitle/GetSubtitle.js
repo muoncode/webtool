@@ -243,7 +243,7 @@ export default function GetSubtitle() {
 
           <button onClick={() => {
             const parser = new srtParser2();
-            const srt_array = parser.fromSrt(fileContent);
+            const srt_array = parser.fromSrt(textInput);
             let subtitle = "";
             for (let index = 0; index < srt_array.length; index++) {
               subtitle += srt_array[index]["text"] + " ";
