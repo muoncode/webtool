@@ -29,23 +29,24 @@ export default function GetSubtitle() {
     //   alert("Bạn chưa chọn FILE nha!");
     //   return;
     // }
-    const reader = new FileReader();
-    reader.readAsText(file);
-    reader.onload = (e) => {
-      const fileContent = e.target.result;
-      const parser = new srtParser2();
-      const srt_array = parser.fromSrt(fileContent);
-      let subtitle = "";
-      for (let index = 0; index < srt_array.length; index++) {
-        subtitle += srt_array[index]["text"] + " ";
-        subtitle_list.push(srt_array[index]["text"]);
-      }
-      setTextInput(subtitle);
+    try {
+      const reader = new FileReader();
+      reader.readAsText(file);
+      reader.onload = (e) => {
+        const fileContent = e.target.result;
+        const parser = new srtParser2();
+        const srt_array = parser.fromSrt(fileContent);
+        let subtitle = "";
+        for (let index = 0; index < srt_array.length; index++) {
+          subtitle += srt_array[index]["text"] + " ";
+          subtitle_list.push(srt_array[index]["text"]);
+        }
+        setTextInput(subtitle);
+      };
+    } catch (error) {
+      alert(error);
     };
 
-    reader.onerror = (err) => {
-      alert(err);
-    };
   };
 
   const text_to_speech_Subtitle = () => {
