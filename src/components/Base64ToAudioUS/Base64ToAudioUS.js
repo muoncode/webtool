@@ -124,6 +124,11 @@ function Base64ToAudioUS() {
           setTextInput(textInput.replaceAll(a, b));
         }}> replace </button>
 
+        <button onClick={() => {
+          navigator.clipboard.writeText(textInput);
+          setTextInput("Đã COPY rồi ... nha!");
+        }} >Copy</button>
+
         <button
           onClick={() => {
             const regExp = /[a-zA-Z]/g;
