@@ -185,7 +185,7 @@ function App() {
               }
               setKQ(result);
               thong__bao("Đã tạo và COPY chuỗi số Ngẫu Nhiên ... !");
-              navigator.clipboard.writeText(result);
+              // navigator.clipboard.writeText(result); // không dùng được 
               return;
             }
             setIdService(e.target.value);
