@@ -184,8 +184,8 @@ function App() {
                 result += Math.floor(Math.random() * 10); // Random digit from 0 to 9
               }
               setKQ(result);
-              navigator.clipboard.writeText(result);
               thong__bao("Đã tạo và COPY chuỗi số Ngẫu Nhiên ... !");
+              navigator.clipboard.writeText(result);
               return;
             }
             setIdService(e.target.value);
