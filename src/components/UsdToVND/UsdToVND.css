@@ -10,7 +10,7 @@
 .container_transfer_money{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
     width: 40%;
 }
@@ -24,6 +24,9 @@
   }
   
   label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 18px;
     /* margin-bottom: 5px; */
     margin-right: 10px;
