@@ -1,5 +1,13 @@
 body {
-  background-color: grey;
+  background-color: #3f51b5;
+}
+
+.container_menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Đảm bảo chiều cao bằng toàn màn hình */
+  margin: 0; /* Loại bỏ khoảng cách mặc định */
 }
 
 .container_home {
