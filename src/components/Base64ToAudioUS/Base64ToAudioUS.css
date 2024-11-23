@@ -40,9 +40,8 @@ textarea {
 }
 
 .btnGroupUS>input{
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 15px;
-  border-radius: 10px;
 }
 
 @media only screen and (max-width: 740px) {
