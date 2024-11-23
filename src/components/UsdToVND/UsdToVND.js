@@ -5,7 +5,7 @@ import "./UsdToVND.css"
 export default function UsdToVND() {
 
     const [usdTOvnd, setUsdTOvnd] = useState('25240');
-    const [vnd, setVnd] = useState('');
+    const [usd, setUSD] = useState('');
     const [transferMoney, setTransferMoney] = useState('');
 
     return (
@@ -14,6 +14,7 @@ export default function UsdToVND() {
                 <div class="form-group">
                     <label >Transfer Money   = </label>
                     <input type="text" value={transferMoney}  onChange={(e) => setTransferMoney(e.target.value)} />
+                    <label>VNĐ</label>
                 </div>
 
                 <div class="form-group">
@@ -22,8 +23,8 @@ export default function UsdToVND() {
                 </div>
 
                 <div class="form-group">
-                    <label >VND  </label>
-                    <input type="text" value={vnd} placeholder="Enter your VND" onChange={(e) => setVnd(e.target.value)} />
+                    <label >USD  </label>
+                    <input type="text" value={usd} placeholder="Enter your USD" onChange={(e) => setUSD(e.target.value)} />
                 </div>
 
             </div>
