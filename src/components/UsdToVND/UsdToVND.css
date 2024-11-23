@@ -1,6 +1,21 @@
+.container_transfer_money_menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Đảm bảo chiều cao bằng toàn màn hình */
+    margin: 0; /* Loại bỏ khoảng cách mặc định */
+}
+
+.container_transfer_money{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
 .form-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 15px;
   }
   
@@ -17,5 +32,4 @@
     border-radius: 5px;
     width: 100%; /* Chiều rộng đầy đủ */
     box-sizing: border-box; /* Đảm bảo padding không làm thay đổi chiều rộng */
-  }
-  
+  }  
