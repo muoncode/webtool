@@ -20,16 +20,18 @@
   }
   
   label {
-    font-size: 16px;
-    margin-bottom: 5px;
+    font-size: 20px;
+    /* margin-bottom: 5px; */
+    margin-right: 10px;
     color: #ffffff; /* Màu chữ trắng để nổi bật trên nền xanh */
   }
   
   input {
     padding: 10px;
-    font-size: 14px;
+    font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%; /* Chiều rộng đầy đủ */
+    /* width: 100%; Chiều rộng đầy đủ */
     box-sizing: border-box; /* Đảm bảo padding không làm thay đổi chiều rộng */
+    margin: 0;
   }  
