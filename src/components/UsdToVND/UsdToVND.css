@@ -4,7 +4,7 @@
     align-items: flex-start;
     height: 100vh; /* Đảm bảo chiều cao bằng toàn màn hình */
     margin: 0; /* Loại bỏ khoảng cách mặc định */
-    margin-top: 60px;
+    margin-top: 10%;
 }
 
 .container_transfer_money{
