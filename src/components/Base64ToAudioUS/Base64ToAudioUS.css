@@ -8,18 +8,18 @@ textarea {
   font-family: monospace;
 }
 
-.btnGroup {
+.btnGroupUS {
   height: 95vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.btnGroup > input {
+.btnGroupUS > input {
   margin-bottom: 15px;
 }
 
-.btnGroup > button {
+.btnGroupUS > button {
   padding: 12px 0px;
   margin-bottom: 10px;
   font-size: 20px;
@@ -31,14 +31,19 @@ textarea {
   text-decoration: none;
 }
 
-.btnGroup > button:hover {
+.btnGroupUS > button:hover {
   color: orangered;
   background-color: aqua;
 }
 
-.btnGroup > button:active {
+.btnGroupUS > button:active {
   background-color: green;
   color: #fff;
+}
+
+.btnGroupUS>input{
+  padding: 5px;
+  margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 740px) {
@@ -48,7 +53,7 @@ textarea {
     flex-direction: column;
   }
 
-  .btnGroup {
+  .btnGroupUS {
     height: auto;
   }
 
@@ -60,7 +65,7 @@ textarea {
     height: 20vh;
   }
 
-  .btnGroup > input {
+  .btnGroupUS > input {
     font-size: 16px;
     margin-bottom: 10px;
   }

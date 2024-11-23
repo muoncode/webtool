@@ -76,7 +76,7 @@ function Base64ToAudioUS() {
         }}
       ></textarea>
 
-      <div className="btnGroup">
+      <div className="btnGroupUS">
         <input
           placeholder="Pitch"
           type={"text"}
