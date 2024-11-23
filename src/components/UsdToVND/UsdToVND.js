@@ -18,13 +18,13 @@ export default function UsdToVND() {
                 </div>
 
                 <div class="form-group">
-                    <label >1 USD   = </label>
-                    <input type="text" value={usdTOvnd} placeholder="Enter your current USD" onChange={(e) => setUsdTOvnd(e.target.value)} />
+                    <label >USD  </label>
+                    <input type="text" value={usd} placeholder="Enter your USD" onChange={(e) => setUSD(e.target.value)} />
                 </div>
 
                 <div class="form-group">
-                    <label >USD  </label>
-                    <input type="text" value={usd} placeholder="Enter your USD" onChange={(e) => setUSD(e.target.value)} />
+                    <label >1 USD   = </label>
+                    <input type="text" value={usdTOvnd} placeholder="Enter your current USD" onChange={(e) => setUsdTOvnd(e.target.value)} />
                 </div>
 
             </div>
