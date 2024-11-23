@@ -40,6 +40,8 @@ textarea {
 }
 
 .btnGroupUS>input{
+  font-size: 16px;
+  font-family: monospace;
   padding: 6px;
   margin-bottom: 15px;
 }
