@@ -11,7 +11,7 @@ export default function UsdToVND() {
     return (
         <div className="container_transfer_money_menu">
             <div className="container_transfer_money">
-                
+
                 <div class="form-group">
                     <label >Transfer Money   = </label>
                     <input type="text" value={transferMoney}  onChange={(e) => setTransferMoney(e.target.value)} />
@@ -20,7 +20,11 @@ export default function UsdToVND() {
 
                 <div class="form-group">
                     <label >USD  </label>
-                    <input type="text" value={usd} placeholder="Enter your USD" onChange={(e) => setUSD(e.target.value)} />
+                    <input type="text" value={usd} placeholder="Enter your USD" onChange={(e) => {
+                        setUSD(e.target.value);
+                        const result = Number(usdTOvnd) * Number(usd);
+                        setTransferMoney(result);
+                    }} />
                 </div>
 
                 <div class="form-group">
