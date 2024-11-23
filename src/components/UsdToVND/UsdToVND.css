@@ -1,0 +1,21 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #ffffff; /* Màu chữ trắng để nổi bật trên nền xanh */
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Chiều rộng đầy đủ */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi chiều rộng */
+  }
+  
