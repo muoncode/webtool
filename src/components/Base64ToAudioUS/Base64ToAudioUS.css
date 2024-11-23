@@ -17,10 +17,6 @@ textarea {
   flex-direction: column;
 }
 
-.btnGroupUS > input {
-  margin-bottom: 15px;
-}
-
 .btnGroupUS > button {
   padding: 12px 0px;
   margin-bottom: 10px;
@@ -46,6 +42,7 @@ textarea {
 .btnGroupUS>input{
   padding: 5px;
   margin-bottom: 15px;
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 740px) {
