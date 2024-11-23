@@ -16,11 +16,13 @@
 .form-group {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 15px;
   }
   
   label {
-    font-size: 20px;
+    font-size: 18px;
     /* margin-bottom: 5px; */
     margin-right: 10px;
     color: #ffffff; /* Màu chữ trắng để nổi bật trên nền xanh */
@@ -28,7 +30,7 @@
   
   input {
     padding: 10px;
-    font-size: 20px;
+    font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 5px;
     /* width: 100%; Chiều rộng đầy đủ */
