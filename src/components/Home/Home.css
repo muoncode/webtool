@@ -8,6 +8,7 @@ body {
   align-items: center;
   height: 100vh; /* Đảm bảo chiều cao bằng toàn màn hình */
   margin: 0; /* Loại bỏ khoảng cách mặc định */
+  font-size: 20px;
 }
 
 .container_home {
