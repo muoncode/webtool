@@ -1,9 +1,10 @@
 .container_transfer_money_menu{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh; /* Đảm bảo chiều cao bằng toàn màn hình */
     margin: 0; /* Loại bỏ khoảng cách mặc định */
+    margin-top: 20px;
 }
 
 .container_transfer_money{
