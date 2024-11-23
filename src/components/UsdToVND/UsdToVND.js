@@ -15,7 +15,6 @@ export default function UsdToVND() {
                 <div class="form-group">
                     <label >Transfer Money   = </label>
                     <input type="text" value={transferMoney}  onChange={(e) => setTransferMoney(e.target.value)} />
-                    <label>VNĐ</label>
                 </div>
 
                 <div class="form-group">
@@ -23,7 +22,7 @@ export default function UsdToVND() {
                     <input type="text" value={usd} placeholder="Enter your USD" onChange={(e) => {
                         setUSD(e.target.value);
                         const result = Number(usdTOvnd) * Number(usd);
-                        setTransferMoney(result);
+                        setTransferMoney(`${result} VNĐ`);
                     }} />
                 </div>
 
