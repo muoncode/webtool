@@ -27,9 +27,15 @@ export default function Home() {
       <button className="btn_getCmt" onClick={() => navigate("/tts_json")}>
         TTS Json
       </button>
+
       <button className="btn_getCmt" onClick={() => navigate("/tts_us")}>
         TTS US
       </button>
+
+      <button className="btn_getCmt" onClick={() => navigate("/transfer__money")}>
+      Transfer Money
+      </button>
+
       <button className="btn_getCmt" onClick={() => navigate("/webtool1")}>
         Test
       </button>

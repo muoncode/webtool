@@ -15,6 +15,7 @@ import TestVideo from "./components/TestVideo/TestVideo";
 import ContinuousColorChange from "./components/ContinuousColorChange/ContinuousColorChange";
 import GetSubtitle from "./components/GetSubtitle/GetSubtitle";
 import DownloadImageFromURL from "./components/DownloadImageFromURL/DownloadImageFromURL";
+import UsdToVND from "./components/UsdToVND/UsdToVND";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
   {
     path: "DownloadImageFromURL/",
     element: <DownloadImageFromURL />,
+  },
+  {
+    path: "transfer__money/",
+    element: <UsdToVND />,
   },
 ]);
 
