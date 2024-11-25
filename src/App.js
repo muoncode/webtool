@@ -205,7 +205,7 @@ function App() {
           <option value={11}>Random Number</option>
         </select>
 
-        <button onClick={() => navigate("/tts_json")}>tts</button>
+        <button onClick={() => navigate("/tts_us")}>tts</button>
 
         <button
           onClick={() => {
