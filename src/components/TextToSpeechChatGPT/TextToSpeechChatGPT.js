@@ -160,11 +160,12 @@ function TextToSpeechChatGPT() {
 
                 <button
                     onClick={() => {
+                        
+                        tts_axios();
                         const regExp = /[a-zA-Z]/g;
 
                         if (regExp.test(textInput)) {
-                            alert("thu")
-                            tts_axios();
+
                         }
                     }}
                 >
