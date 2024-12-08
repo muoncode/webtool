@@ -175,7 +175,7 @@ function TextToSpeechChatGPT() {
             }
           }}
         >
-          Ok
+          ChatGPT
         </button>
 
         <button
