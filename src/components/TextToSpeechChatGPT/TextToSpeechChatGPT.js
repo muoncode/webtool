@@ -163,6 +163,7 @@ function TextToSpeechChatGPT() {
                         const regExp = /[a-zA-Z]/g;
 
                         if (regExp.test(textInput)) {
+                            alert("thu")
                             tts_axios();
                         }
                     }}
