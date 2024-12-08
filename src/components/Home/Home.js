@@ -15,6 +15,8 @@ export default function Home() {
         >
           Get Subtitle
         </button>
+
+
         <button className="btn_getCmt" onClick={() => navigate("/getcommment")}>
           Get Comments
         </button>
@@ -25,12 +27,18 @@ export default function Home() {
         <button className="btn_getCmt" onClick={() => navigate("/webtool")}>
           Edit text
         </button>
+
+
         <button className="btn_getCmt" onClick={() => navigate("/tts_json")}>
           TTS Json
         </button>
 
         <button className="btn_getCmt" onClick={() => navigate("/tts_us")}>
           TTS US
+        </button>
+
+        <button className="btn_getCmt" onClick={() => navigate("/TextToSpeechChatGPT")}>
+          TTS ChatGPT
         </button>
 
         <button className="btn_getCmt" onClick={() => navigate("/transfer__money")}>

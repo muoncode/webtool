@@ -16,6 +16,7 @@ import ContinuousColorChange from "./components/ContinuousColorChange/Continuous
 import GetSubtitle from "./components/GetSubtitle/GetSubtitle";
 import DownloadImageFromURL from "./components/DownloadImageFromURL/DownloadImageFromURL";
 import UsdToVND from "./components/UsdToVND/UsdToVND";
+import TextToSpeechChatGPT from "./components/TextToSpeechChatGPT/TextToSpeechChatGPT";
 
 const router = createBrowserRouter([
   {
@@ -81,9 +82,17 @@ const router = createBrowserRouter([
     path: "DownloadImageFromURL/",
     element: <DownloadImageFromURL />,
   },
+
+
   {
     path: "transfer__money/",
     element: <UsdToVND />,
+  }, 
+
+
+  {
+    path: "TextToSpeechChatGPT/",
+    element: <TextToSpeechChatGPT />,
   },
 ]);
 
