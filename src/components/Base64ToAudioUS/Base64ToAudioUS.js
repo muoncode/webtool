@@ -112,7 +112,10 @@ function Base64ToAudioUS() {
           type={"text"}
           onChange={(e) => {
             const value = e.target.value;
+            const match = value.match(/^([a-z]{2}-[A-Z]{2})/);
+            const result = match ? match[1] : null;
             setVoiceName(value);
+            setLanguageCode(result);
           }}
           value={voiceName}
         />
