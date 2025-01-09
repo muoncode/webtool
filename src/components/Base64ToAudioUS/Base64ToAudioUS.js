@@ -115,7 +115,9 @@ function Base64ToAudioUS() {
             const match = value.match(/^([a-z]{2}-[A-Z]{2})/);
             const result = match ? match[1] : null;
             setVoiceName(value);
-            setLanguageCode(result);
+            if (languageCode !== result) {
+              setLanguageCode(result);
+            }
           }}
           value={voiceName}
         />
