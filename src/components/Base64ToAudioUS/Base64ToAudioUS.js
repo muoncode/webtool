@@ -11,7 +11,7 @@ function Base64ToAudioUS() {
 
   const [textInput, setTextInput] = useState("");
   const [textNote, setTextNote] = useState(
-    `vi-VN-Neural2-A\nvi-VN-Wavenet-C\nen-US-Polyglot-1\nen-US-Neural2-A\nen-US-Studio-M\nen-AU-Journey-F\nen-AU-Polyglot-1\nen-AU-Neural2-A`
+    `vi-VN-Neural2-A\nvi-VN-Wavenet-C\nen-US-Journey-F\nen-US-Polyglot-1\nen-US-Neural2-A\nen-US-Studio-O\nen-AU-Journey-F\nen-AU-Polyglot-1\nen-AU-Neural2-A`
   );
   const [base64Audio, setBase64Audio] = useState("");
   const [speed, setSpeed] = useState(1);
