@@ -32,9 +32,11 @@ export default function GetCommmentFromChat() {
               const b = [];
 
               for (let index = 0; index < a.length; index++) {
+
                 if (a[index].charAt(0) === '"') {
                   a[index] = a[index].replace('"', "");
                 }
+                
                 if (a[index].endsWith('"')) {
                   a[index] = a[index].slice(0, -1);
                 }
