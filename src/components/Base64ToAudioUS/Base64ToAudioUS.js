@@ -19,6 +19,14 @@ function Base64ToAudioUS() {
   const [voiceName, setVoiceName] = useState("vi-VN-Neural2-D");
   const [count_character, setCount_character] = useState(0);
   const [pitch, setPitch] = useState(0);
+  const [message, setMessage] = useState("");
+
+  const thong__bao = (text) => {
+    setMessage(text);
+    setTimeout(() => {
+      setMessage("");
+    }, 1000);
+  };
 
   const tts_axios = () => {
     const data = JSON.stringify({
@@ -131,7 +139,7 @@ function Base64ToAudioUS() {
 
         <button onClick={() => {
           navigator.clipboard.writeText(textInput);
-          setTextInput("Đã COPY rồi ... nha!");
+          thong__bao("Đã COPY rồi ... nha!");
         }} >Copy</button>
 
         <button
