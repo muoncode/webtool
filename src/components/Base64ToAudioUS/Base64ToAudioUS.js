@@ -222,6 +222,16 @@ function Base64ToAudioUS() {
         </button>
 
         <button
+          id="count_character"
+          onClick={() => {
+            setTextInput("");
+            setCount_character(0);
+          }}
+        >
+          {count_character}
+        </button>
+
+        <button
           onClick={() =>
             window.open(
               "https://www.gstatic.com/cloud-site-ux/text_to_speech/text_to_speech.min.html"
@@ -232,16 +242,6 @@ function Base64ToAudioUS() {
         </button>
 
         <button onClick={() => navigate("/home")}>Home</button>
-
-        <button
-          id="count_character"
-          onClick={() => {
-            setTextInput("");
-            setCount_character(0);
-          }}
-        >
-          {count_character}
-        </button>
 
         <textarea
           rows={"6"}
