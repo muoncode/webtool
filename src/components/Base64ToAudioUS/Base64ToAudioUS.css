@@ -49,9 +49,9 @@ textarea {
 .messageText {
   position: fixed;
   top: 0;
-  right: 0;
-  /* transform: translateX(-50%); */
-  margin: 12% 0 7% 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 12% 0 0 0;
 
   color: whitesmoke;
   font-size: 18px;
