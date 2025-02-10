@@ -139,7 +139,7 @@ function Base64ToAudioUS() {
 
         <button onClick={() => {
           navigator.clipboard.writeText(textInput);
-          thong__bao("Đã COPY rồi ... nha!");
+          thong__bao("đã COPY rồi ... nha !");
         }} >Copy</button>
 
         <button
