@@ -251,6 +251,8 @@ function Base64ToAudioUS() {
         autoPlay
         src={base64Audio !== "" ? base64Audio : ""}
       ></audio>
+
+      <span className="messageText">{message}</span>
     </div>
   );
 }

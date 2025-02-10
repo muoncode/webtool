@@ -46,6 +46,18 @@ textarea {
   margin-bottom: 15px;
 }
 
+.messageText {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+
+  color: whitesmoke;
+  font-size: 18px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 740px) {
   .container {
     height: auto;
