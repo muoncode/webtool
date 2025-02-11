@@ -10,6 +10,10 @@
   font-family: monospace;
 }
 
+.text__note {
+  background-color: #5b0888;
+}
+
 .btnGroupUS {
   height: 95vh;
   display: flex;

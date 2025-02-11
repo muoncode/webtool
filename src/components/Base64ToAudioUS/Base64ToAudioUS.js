@@ -245,6 +245,7 @@ function Base64ToAudioUS() {
         <button onClick={() => navigate("/home")}>Home</button>
 
         <textarea
+        className="text__note"
           rows={"6"}
           cols={"6"}
           value={textNote}
