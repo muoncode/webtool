@@ -74,6 +74,7 @@ function Base64ToAudioUS() {
   return (
     <div className="container">
       <textarea
+      className="tts_us"
         rows={"37"}
         cols={"90"}
         placeholder={"Nhập vào đây Để nghe thử nha"}

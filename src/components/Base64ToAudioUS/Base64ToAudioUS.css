@@ -1,7 +1,8 @@
 .container {
 }
 
-textarea {
+.tts_us {
+  background-color: #212121 ;
   font-size: 18px;
   padding: 7px 5px 0 12px;
   box-sizing: border-box;
