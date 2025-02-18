@@ -155,8 +155,10 @@ function App() {
         setKQ(result);
         thong__bao("Đã copy XONG ... !");
         navigator.clipboard.writeText(result);
+        setTextInput("");
         return;
       }
+      // option features
     
     
     } else {
