@@ -150,7 +150,15 @@ function App() {
         const uniqueString = [...new Set(text.split(' '))].join(' ');
         setKQ(uniqueString);
         thong__bao("Đã xóa các Hashtag trùng lặp");
+      } else if (idSelect === 12) {
+        const result = text.replace("/shorts/", "/watch?v=");
+        setKQ(result);
+        thong__bao("Đã copy XONG ... !");
+        navigator.clipboard.writeText(result);
+        return;
       }
+    
+    
     } else {
       setKQ("Bạn phải nhập nhé !");
     }
@@ -203,6 +211,7 @@ function App() {
           <option value={9}>Epidemicsound</option>
           <option value={10}>same removal</option>
           <option value={11}>Random Number</option>
+          <option value={12}>Link YT Short</option>
         </select>
 
         <button onClick={() => navigate("/tts_us")}>tts</button>
