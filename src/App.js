@@ -231,6 +231,11 @@ function App() {
           onClick={() => {
             navigator.clipboard.readText().then((clipboardText) => {
               setTextInput(clipboardText);
+              try {
+                handleString(clipboardText);
+              } catch (error) {
+                setKQ(error);
+              }
             });
           }}
         >
