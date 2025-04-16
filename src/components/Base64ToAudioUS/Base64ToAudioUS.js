@@ -242,7 +242,7 @@ function Base64ToAudioUS() {
           Web TTS
         </button>
 
-        <button onClick={() => navigate("/home")}>Home</button>
+        <button onClick={() => navigate("/webtool")}>Home</button>
 
         <textarea
         className="text__note"
