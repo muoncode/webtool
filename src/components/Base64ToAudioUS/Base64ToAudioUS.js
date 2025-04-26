@@ -85,9 +85,9 @@ function Base64ToAudioUS() {
         }}
 
         onSelect={(e) => {
-          const start = e.target.selectionStart;
-          const end = e.target.selectionEnd;
-          const selectedText = e.target.value.substring(start, end);
+          // const start = e.target.selectionStart;
+          // const end = e.target.selectionEnd;
+          // const selectedText = e.target.value.substring(start, end);
           // thong__bao("thu_xem");
           // setCount_character(selectedText.length);
         }}
