@@ -83,6 +83,10 @@ function Base64ToAudioUS() {
           setTextInput(e.target.value);
           setCount_character(e.target.value.length);
         }}
+
+        onSelect={(e) => {
+          setCount_character(e.target.value.length);
+        }}
       ></textarea>
 
       <div className="btnGroupUS">
