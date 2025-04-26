@@ -85,6 +85,7 @@ function Base64ToAudioUS() {
         }}
 
         onSelect={(e) => {
+          thong__bao("thu_xem");
           setCount_character(e.target.value.length);
         }}
       ></textarea>
