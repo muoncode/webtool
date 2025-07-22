@@ -4,7 +4,7 @@ import "./UsdToVND.css"
 
 export default function UsdToVND() {
 
-    const [usdTOvnd, setUsdTOvnd] = useState('25240');
+    const [usdTOvnd, setUsdTOvnd] = useState('27100');
     const [usd, setUSD] = useState('');
     const [transferMoney, setTransferMoney] = useState('');
 
