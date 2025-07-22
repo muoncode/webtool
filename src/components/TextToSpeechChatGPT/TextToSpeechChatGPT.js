@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
 import { saveAs } from "file-saver";
 import axios from "axios";
+import { Buffer } from 'buffer';
 
 import "./TextToSpeechChatGPT.css";
 
