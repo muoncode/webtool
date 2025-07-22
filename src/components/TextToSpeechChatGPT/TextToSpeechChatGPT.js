@@ -51,7 +51,7 @@ function TextToSpeechChatGPT() {
             .then(response => {
                 const res = response.data;
                 console.log(response);
-                // setBase64Audio("data:audio/wav;base64," + res["audioContent"]);
+                
             })
             .catch(error => {
                 if (textInput !== "") {
