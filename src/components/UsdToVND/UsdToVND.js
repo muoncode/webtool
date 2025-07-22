@@ -28,7 +28,7 @@ export default function UsdToVND() {
 
                 <div class="form-group">
                     <label >1 USD   = </label>
-                    <input type="text" value={usdTOvnd} placeholder="Enter your current" onChange={(e) => setUsdTOvnd(e.target.value)} />
+                    <input type="text" value={usdTOvnd} placeholder="Enter your current" onChange={(e) => setUsdTOvnd(e.target.value)} />VNĐ
                 </div>
 
             </div>
