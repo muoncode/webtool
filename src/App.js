@@ -188,7 +188,7 @@ function App() {
         <select
           value={idService}
           onChange={(e) => {
-            if (e.target.value == 11) {
+            if (e.target.value === 11) {
               let result = '';
               for (let i = 0; i < 20; i++) {
                 result += Math.floor(Math.random() * 10); // Random digit from 0 to 9
