@@ -14,7 +14,7 @@ export default function UsdToVND() {
 
                 <div class="form-group">
                     <label >Transfer Money   =  </label>
-                    <input type="text" value={transferMoney}  readOnly />
+                    <input type="text" value={transferMoney}  disabled />
                 </div>
 
                 <div class="form-group">
