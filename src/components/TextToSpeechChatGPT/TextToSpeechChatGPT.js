@@ -16,7 +16,7 @@ function TextToSpeechChatGPT() {
     const [base64Audio, setBase64Audio] = useState("");
     const [speed, setSpeed] = useState(1);
     const [languageCode, setLanguageCode] = useState("vi-VN");
-    const [voiceName, setVoiceName] = useState("vi-VN-Neural2-D");
+    const [voiceName, setVoiceName] = useState("Charon");
     const [count_character, setCount_character] = useState(0);
     const [pitch, setPitch] = useState(0);
 
@@ -66,7 +66,7 @@ function TextToSpeechChatGPT() {
                     role: 'user',
                     parts: [
                         {
-                            text: 'hello',
+                            text: textInput,
                         },
                     ],
                 },
@@ -77,7 +77,7 @@ function TextToSpeechChatGPT() {
                 speech_config: {
                     voice_config: {
                         prebuiltVoiceConfig: {
-                            voice_name: 'Charon',
+                            voice_name: voiceName,
                         },
                     },
                 },
