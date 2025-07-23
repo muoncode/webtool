@@ -164,8 +164,7 @@ function TextToSpeechChatGPT() {
                     readOnly
                     onCopy={(e) => e.preventDefault()}
                     onCut={(e) => e.preventDefault()}
-                    onFocus={(e) => e.target.blur()}
-                    style={{ userSelect: 'none', pointerEvents: 'none' }}
+                    style={{ userSelect: 'none'}}
                 />
 
                 <input
