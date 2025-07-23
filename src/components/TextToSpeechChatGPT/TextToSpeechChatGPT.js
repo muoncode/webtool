@@ -15,10 +15,11 @@ function TextToSpeechChatGPT() {
     const [textNote, setTextNote] = useState();
     const [base64Audio, setBase64Audio] = useState("");
     const [speed, setSpeed] = useState(1);
-    const [languageCode, setLanguageCode] = useState("vi-VN");
+    // const [languageCode, setLanguageCode] = useState("vi-VN");
     const [voiceName, setVoiceName] = useState("Charon");
     const [count_character, setCount_character] = useState(0);
     const [pitch, setPitch] = useState(0);
+    const [api_key, setAPI_Key] = useState("AIzaSyBdXcs9-IhKV2wZe4m4MpuQ3IJN-kYQ4Vs");
 
     // Hàm tạo header WAV
     const createWavHeader = (dataLength, options) => {
@@ -55,7 +56,7 @@ function TextToSpeechChatGPT() {
 
     const tts_axios = () => {
 
-        const apiKey = "AIzaSyBdXcs9-IhKV2wZe4m4MpuQ3IJN-kYQ4Vs";
+        const apiKey = api_key;
         const model = 'gemini-2.5-flash-preview-tts';
         const api = 'streamGenerateContent';
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:${api}?key=${apiKey}`;
@@ -152,13 +153,14 @@ function TextToSpeechChatGPT() {
                 />
 
                 <input
-                    placeholder="LanguageCode"
-                    type={"text"}
+                    placeholder="API Key"
+                    type={"password"}
                     onChange={(e) => {
                         const value = e.target.value;
-                        setLanguageCode(value);
+                        // setLanguageCode(value);
+                        setAPI_Key(value);
                     }}
-                    value={languageCode}
+                    value={api_key}
                 />
 
                 <input
