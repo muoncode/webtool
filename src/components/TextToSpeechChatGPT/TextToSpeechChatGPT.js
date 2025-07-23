@@ -23,35 +23,35 @@ function TextToSpeechChatGPT() {
 
     // Hàm tạo header WAV
     const createWavHeader = (dataLength, options) => {
-      const { numChannels, sampleRate, bitsPerSample } = options;
-      const byteRate = sampleRate * numChannels * bitsPerSample / 8;
-      const blockAlign = numChannels * bitsPerSample / 8;
-      const buffer = Buffer.alloc(44);
+        const { numChannels, sampleRate, bitsPerSample } = options;
+        const byteRate = sampleRate * numChannels * bitsPerSample / 8;
+        const blockAlign = numChannels * bitsPerSample / 8;
+        const buffer = Buffer.alloc(44);
 
-      buffer.write('RIFF', 0);                      // ChunkID
-      buffer.writeUInt32LE(36 + dataLength, 4);     // ChunkSize
-      buffer.write('WAVE', 8);                      // Format
-      buffer.write('fmt ', 12);                     // Subchunk1ID
-      buffer.writeUInt32LE(16, 16);                 // Subchunk1Size (PCM)
-      buffer.writeUInt16LE(1, 20);                  // AudioFormat (1 = PCM)
-      buffer.writeUInt16LE(numChannels, 22);        // NumChannels
-      buffer.writeUInt32LE(sampleRate, 24);         // SampleRate
-      buffer.writeUInt32LE(byteRate, 28);           // ByteRate
-      buffer.writeUInt16LE(blockAlign, 32);         // BlockAlign
-      buffer.writeUInt16LE(bitsPerSample, 34);      // BitsPerSample
-      buffer.write('data', 36);                     // Subchunk2ID
-      buffer.writeUInt32LE(dataLength, 40);         // Subchunk2Size
+        buffer.write('RIFF', 0);                      // ChunkID
+        buffer.writeUInt32LE(36 + dataLength, 4);     // ChunkSize
+        buffer.write('WAVE', 8);                      // Format
+        buffer.write('fmt ', 12);                     // Subchunk1ID
+        buffer.writeUInt32LE(16, 16);                 // Subchunk1Size (PCM)
+        buffer.writeUInt16LE(1, 20);                  // AudioFormat (1 = PCM)
+        buffer.writeUInt16LE(numChannels, 22);        // NumChannels
+        buffer.writeUInt32LE(sampleRate, 24);         // SampleRate
+        buffer.writeUInt32LE(byteRate, 28);           // ByteRate
+        buffer.writeUInt16LE(blockAlign, 32);         // BlockAlign
+        buffer.writeUInt16LE(bitsPerSample, 34);      // BitsPerSample
+        buffer.write('data', 36);                     // Subchunk2ID
+        buffer.writeUInt32LE(dataLength, 40);         // Subchunk2Size
 
-      return buffer;
+        return buffer;
     };
 
     // Chuyển đổi L16 sang WAV
     const convertToWav = (base64Data) => {
-      const options = { numChannels: 1, sampleRate: 24000, bitsPerSample: 16 };
-      const dataBuffer = Buffer.from(base64Data, 'base64');
-      const wavHeader = createWavHeader(dataBuffer.length, options);
-      const wavBuffer = Buffer.concat([wavHeader, dataBuffer]);
-      return wavBuffer.toString('base64');
+        const options = { numChannels: 1, sampleRate: 24000, bitsPerSample: 16 };
+        const dataBuffer = Buffer.from(base64Data, 'base64');
+        const wavHeader = createWavHeader(dataBuffer.length, options);
+        const wavBuffer = Buffer.concat([wavHeader, dataBuffer]);
+        return wavBuffer.toString('base64');
     };
 
     const tts_axios = () => {
@@ -161,6 +161,11 @@ function TextToSpeechChatGPT() {
                         setAPI_Key(value);
                     }}
                     value={api_key}
+                    readOnly
+                    onCopy={(e) => e.preventDefault()}
+                    onCut={(e) => e.preventDefault()}
+                    onFocus={(e) => e.target.blur()}
+                    style={{ userSelect: 'none', pointerEvents: 'none' }}
                 />
 
                 <input
