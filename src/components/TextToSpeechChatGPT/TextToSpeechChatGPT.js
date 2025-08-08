@@ -20,6 +20,7 @@ function TextToSpeechChatGPT() {
     const [count_character, setCount_character] = useState(0);
     const [pitch, setPitch] = useState(0);
     const [api_key, setAPI_Key] = useState("AIzaSyBdXcs9-IhKV2wZe4m4MpuQ3IJN-kYQ4Vs");
+    const [model__TTS , setModel__TTS] = useState("gemini-2.5-flash-preview-tts");
 
     // Hàm tạo header WAV
     const createWavHeader = (dataLength, options) => {
@@ -57,7 +58,7 @@ function TextToSpeechChatGPT() {
     const tts_axios = () => {
 
         const apiKey = api_key;
-        const model = 'gemini-2.5-flash-preview-tts';
+        const model = model__TTS;
         const api = 'streamGenerateContent';
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:${api}?key=${apiKey}`;
 
@@ -133,13 +134,13 @@ function TextToSpeechChatGPT() {
 
             <div className="btnGroupUS">
                 <input
-                    placeholder="Pitch"
+                    placeholder="Model TTS"
                     type={"text"}
                     onChange={(e) => {
                         const value = e.target.value;
-                        setPitch(value);
+                        setModel__TTS(value);
                     }}
-                    value={pitch}
+                    value={model__TTS}
                 />
 
                 <input
