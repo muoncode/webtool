@@ -22,6 +22,10 @@ function TextToSpeechChatGPT() {
     const [api_key, setAPI_Key] = useState("AIzaSyBdXcs9-IhKV2wZe4m4MpuQ3IJN-kYQ4Vs");
     const [model__TTS , setModel__TTS] = useState("gemini-2.5-flash-preview-tts");
 
+    // Hàm lấy phụ đề video Youtube
+    const get___Subtitle_Yotube = () => {
+        // end method get___Subtitle_Yotube
+    };
     // Hàm tạo header WAV
     const createWavHeader = (dataLength, options) => {
         const { numChannels, sampleRate, bitsPerSample } = options;
@@ -244,6 +248,8 @@ function TextToSpeechChatGPT() {
                 >
                     {count_character}
                 </button>
+
+                <button onClick={() => get___Subtitle_Yotube()}>Get Subtitle</button>
 
                 <textarea
                     rows={"6"}
