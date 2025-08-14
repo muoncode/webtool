@@ -4,6 +4,7 @@ import { useState } from "react";
 import { saveAs } from "file-saver";
 import axios from "axios";
 import { Buffer } from 'buffer';
+import { YoutubeTranscript } from 'youtube-transcript';
 
 import "./TextToSpeechChatGPT.css";
 
@@ -20,10 +21,22 @@ function TextToSpeechChatGPT() {
     const [count_character, setCount_character] = useState(0);
     const [pitch, setPitch] = useState(0);
     const [api_key, setAPI_Key] = useState("AIzaSyBdXcs9-IhKV2wZe4m4MpuQ3IJN-kYQ4Vs");
-    const [model__TTS , setModel__TTS] = useState("gemini-2.5-flash-preview-tts");
+    const [model__TTS, setModel__TTS] = useState("gemini-2.5-flash-preview-tts");
 
     // Hàm lấy phụ đề video Youtube
     const get___Subtitle_Yotube = () => {
+
+        navigator.clipboard.readText().then((clipboardText) => {
+            YoutubeTranscript.fetchTranscript(clipboardText)
+                .then(transcriptData => {
+                    const textOnly = transcriptData
+                        .map(item => item.text)
+                        .join(' ');
+                    setCount_character(textOnly.length);
+                    setTextInput(textOnly);
+                })
+                .catch(err => console.error(err));
+        });
         // end method get___Subtitle_Yotube
     };
     // Hàm tạo header WAV
@@ -168,7 +181,7 @@ function TextToSpeechChatGPT() {
                     value={api_key}
                     onCopy={(e) => e.preventDefault()}
                     onCut={(e) => e.preventDefault()}
-                    style={{ userSelect: 'none'}}
+                    style={{ userSelect: 'none' }}
                 />
 
                 <input
