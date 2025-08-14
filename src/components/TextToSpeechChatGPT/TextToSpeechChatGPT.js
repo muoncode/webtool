@@ -4,7 +4,6 @@ import { useState } from "react";
 import { saveAs } from "file-saver";
 import axios from "axios";
 import { Buffer } from 'buffer';
-import { YoutubeTranscript } from 'youtube-transcript';
 
 import "./TextToSpeechChatGPT.css";
 
@@ -26,17 +25,7 @@ function TextToSpeechChatGPT() {
     // Hàm lấy phụ đề video Youtube
     const get___Subtitle_Yotube = () => {
 
-        navigator.clipboard.readText().then((clipboardText) => {
-            YoutubeTranscript.fetchTranscript(clipboardText)
-                .then(transcriptData => {
-                    const textOnly = transcriptData
-                        .map(item => item.text)
-                        .join(' ');
-                    setCount_character(textOnly.length);
-                    setTextInput(textOnly);
-                })
-                .catch(err => console.error(err));
-        });
+        alert("Chưa CODE");
         // end method get___Subtitle_Yotube
     };
     // Hàm tạo header WAV
