@@ -21,7 +21,7 @@ import TextToSpeechChatGPT from "./components/TextToSpeechChatGPT/TextToSpeechCh
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
     errorElement: <h1>Đang lỗi rồi nha anh em ơi</h1>,
   },
   {
