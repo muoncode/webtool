@@ -66,7 +66,7 @@ export default function GetCommmentFromChat() {
           <button onClick={() => navigate("/home")}>Home</button>
         </div>
 
-        <div className="comments">
+        <div className="comments_cp_text">
           {isComments
             ? comments.map((e, i) => {
                 return (

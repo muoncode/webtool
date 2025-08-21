@@ -42,6 +42,10 @@ button:active {
   flex-direction: column;
 }
 
+.comments_cp_text {
+  width: 80%;
+}
+
 .cmt {
   color: white;
   margin: 0px;
