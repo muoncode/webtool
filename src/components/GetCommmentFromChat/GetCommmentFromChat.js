@@ -79,14 +79,14 @@ export default function GetCommmentFromChat() {
                                         navigator.clipboard.writeText(e.text);
 
                                         setComments(
-                                            comments.map((e) => {
-                                                if (e.id === i) {
+                                            comments.map((f) => {
+                                                if (f.id === i) {
                                                     return {
-                                                        ...e,
+                                                        ...f,
                                                         text: `Pressed and Copied`,
                                                     };
                                                 } else {
-                                                    return e;
+                                                    return f;
                                                 }
                                             })
                                         );
