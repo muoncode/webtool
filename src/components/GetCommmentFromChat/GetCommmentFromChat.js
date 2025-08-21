@@ -64,6 +64,8 @@ export default function GetCommmentFromChat() {
           <button onClick={() => navigate("/webtool")}>tool</button>
 
           <button onClick={() => navigate("/home")}>Home</button>
+
+          <button onClick={() => setTextInput("")}>Delete</button>
         </div>
 
         <div className="comments_cp_text">
