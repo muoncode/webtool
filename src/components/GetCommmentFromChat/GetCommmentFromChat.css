@@ -44,7 +44,8 @@ button:active {
 
 .cmt {
   color: white;
-  margin: 15px;
+  margin: 0px;
+  margin-bottom: 40px;
   font-size: 18px;
   font-family: monospace;
 }
@@ -52,5 +53,5 @@ button:active {
 .cmt:hover {
   /* opacity: 0.8; */
   cursor: pointer;
-  color: orange;
+  color: yellow;
 }
