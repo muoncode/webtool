@@ -84,7 +84,7 @@ export default function GetCommmentFromChat() {
                                                 if (f.id === i) {
                                                     return {
                                                         ...f,
-                                                        text: `Pressed and Copied`,
+                                                        text: `Pressed and Copied , Đã nhấn và Sao chép RỒI ... !`,
                                                     };
                                                 } else {
                                                     return f;
