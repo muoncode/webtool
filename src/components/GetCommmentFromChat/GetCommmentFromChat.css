@@ -43,13 +43,14 @@ button:active {
 }
 
 .comments_cp_text {
+  margin-top: 30px;
   width: 80%;
 }
 
 .cmt {
   color: white;
   margin: 0px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   font-size: 18px;
   font-family: monospace;
 }
