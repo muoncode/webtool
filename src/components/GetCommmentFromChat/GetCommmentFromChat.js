@@ -71,6 +71,7 @@ export default function GetCommmentFromChat() {
                 {isComments
                     ? <div className="comments_cp_text">
                         {comments.map((e, i) => {
+                            if (!e.text || e.text.trim() === '') return null;
                             return (
                                 <p
                                     key={i}
