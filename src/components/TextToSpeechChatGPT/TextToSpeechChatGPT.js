@@ -199,11 +199,11 @@ function TextToSpeechChatGPT() {
                     onClick={() => {
 
                         tts_axios();
-                        const regExp = /[a-zA-Z]/g;
+                        // const regExp = /[a-zA-Z]/g;
 
-                        if (regExp.test(textInput)) {
+                        // if (regExp.test(textInput)) {
 
-                        }
+                        // }
                     }}
                 >
                     Gemini
