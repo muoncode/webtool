@@ -19,7 +19,7 @@ function App() {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      console.log("Người dùng nhập xong:", text);
+      console.log("Người dùng nhập xong:", textInput);
     }
   }; // handleKeyDown
 
@@ -179,7 +179,7 @@ function App() {
         cols={"60"}
         placeholder={"Nhập vào đây nha"}
         value={textInput}
-        // onKeyDown={handleKeyDown}
+        onKeyDown={handleKeyDown}
         onChange={(e) => {
           const text = e.target.value;
           console.log(text);               
