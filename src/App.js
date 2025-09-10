@@ -17,6 +17,12 @@ function App() {
     }, 1000);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      console.log("Người dùng nhập xong:", text);
+    }
+  };
+
   const handleString = (text) => {
     const idSelect = Number(idService);
     if (text !== "") {
@@ -173,6 +179,7 @@ function App() {
         cols={"60"}
         placeholder={"Nhập vào đây nha"}
         value={textInput}
+        onKeyDown={handleKeyDown}
         onChange={(e) => {
           const text = e.target.value;
           console.log(text);               
