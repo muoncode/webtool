@@ -25,42 +25,42 @@ function TextToSpeechChatGPT() {
     const get___dstv = () => {
 
         const MODEL_ID = "gemini-2.5-flash";
-const GENERATE_CONTENT_API = "streamGenerateContent";
+        const GENERATE_CONTENT_API = "streamGenerateContent";
         axios.post(
-    `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:${GENERATE_CONTENT_API}?key=${api_key}`,
-    {
-      contents: [
-        {
-          role: "user",
-          parts: [
+            `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:${GENERATE_CONTENT_API}?key=${api_key}`,
             {
-              text: `Bạn là một Chuyên Gia chuyên sâu, trong lĩnh vực Dịch Thuật Ngôn Ngữ , đọc hiểu, nội dung, với hơn 40 năm , dầy dặn kinh nghiệm , kiến thức sâu sắc , trong việc chuyển đổi ngôn ngữ. Hiện tôi đang có nội dung sau, Bạn hãy giúp Tôi dịch sang   Tiếng Việt   , theo đúng ngữ cảnh , văn phong , Giữ nguyên giọng điệu, phong cách , sắc thái ban đầu , đảm bảo ngữ pháp chính xác , bản dịch mạch lạc , tự nhiên , dễ hiểu , của nội dung. Chỉ trả lời bản dịch thôi bạn nhé: "${textInput}"`, // thay INSERT_INPUT_HERE
+                contents: [
+                    {
+                        role: "user",
+                        parts: [
+                            {
+                                text: `Bạn là một Chuyên Gia chuyên sâu, trong lĩnh vực Dịch Thuật Ngôn Ngữ , đọc hiểu, nội dung, với hơn 40 năm , dầy dặn kinh nghiệm , kiến thức sâu sắc , trong việc chuyển đổi ngôn ngữ. Hiện tôi đang có nội dung sau, Bạn hãy giúp Tôi dịch sang   Tiếng Việt   , theo đúng ngữ cảnh , văn phong , Giữ nguyên giọng điệu, phong cách , sắc thái ban đầu , đảm bảo ngữ pháp chính xác , bản dịch mạch lạc , tự nhiên , dễ hiểu , của nội dung. Chỉ trả lời bản dịch thôi bạn nhé: "${textInput}"`, // thay INSERT_INPUT_HERE
+                            },
+                        ],
+                    },
+                ],
+                generationConfig: {
+                    thinkingConfig: {
+                        thinkingBudget: -1,
+                    },
+                },
             },
-          ],
-        },
-      ],
-      generationConfig: {
-        thinkingConfig: {
-          thinkingBudget: -1,
-        },
-      },
-    },
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  ) .then((response) => {
-    const allText = response.data
-  .map(item => item.candidates[0].content.parts[0].text)
-  .join("");
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        ).then((response) => {
+            const allText = response.data
+                .map(item => item.candidates[0].content.parts[0].text)
+                .join("");
 
-    setTextInput(allText);
-  })
-  .catch((error) => {
-    setTextInput("xảy ra lỗi rồi. Vào console xem đi");
-    console.error("Lỗi gọi API:", error);
-  });
+            setTextInput(allText);
+        })
+            .catch((error) => {
+                setTextInput("xảy ra lỗi rồi. Vào console xem đi");
+                console.error("Lỗi gọi API:", error);
+            });
         // end method get___dstv
     };
 
