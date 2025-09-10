@@ -175,7 +175,7 @@ function App() {
         value={textInput}
         onChange={(e) => {
           const text = e.target.value;
-          console.console.log(text);        
+          console.log(text);               
           setTextInput(text);
           try {
             handleString(text);
