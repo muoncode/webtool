@@ -58,7 +58,8 @@ const GENERATE_CONTENT_API = "streamGenerateContent";
     setTextInput(allText);
   })
   .catch((error) => {
-    setTextInput("Lỗi gọi API:", error);
+    setTextInput("xảy ra lỗi rồi. Vào console xem đi");
+    console.error("Lỗi gọi API:", error);
   });
         // end method get___dstv
     };
