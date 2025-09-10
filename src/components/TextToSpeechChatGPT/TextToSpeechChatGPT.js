@@ -41,7 +41,7 @@ const GENERATE_CONTENT_API = "streamGenerateContent";
       ],
       generationConfig: {
         thinkingConfig: {
-          thinkingBudget: 0,
+          thinkingBudget: -1,
         },
       },
     },
