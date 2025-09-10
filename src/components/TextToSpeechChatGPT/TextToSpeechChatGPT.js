@@ -51,7 +51,11 @@ const GENERATE_CONTENT_API = "streamGenerateContent";
       },
     }
   ) .then((response) => {
-    console.log("Kết quả API:", response.data);
+    const allText = response.data
+  .map(item => item.candidates[0].content.parts[0].text)
+  .join("");
+
+    console.log("Kết quả API:", allText);
   })
   .catch((error) => {
     console.error("Lỗi gọi API:", error);
