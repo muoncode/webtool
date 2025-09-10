@@ -252,7 +252,7 @@ function TextToSpeechChatGPT() {
                     {count_character}
                 </button>
 
-                <button onClick={() => get___dstv()}>Get Subtitle</button>
+                <button onClick={() => get___dstv()}>Get dstv</button>
 
                 <textarea
                     rows={"6"}
