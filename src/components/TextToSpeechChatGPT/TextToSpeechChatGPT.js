@@ -24,7 +24,7 @@ function TextToSpeechChatGPT() {
 
     const get___dstv = () => {
 
-        const MODEL_ID = "gemini-2.5-pro";
+        const MODEL_ID = "gemini-2.5-flash";
 const GENERATE_CONTENT_API = "streamGenerateContent";
         axios.post(
     `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:${GENERATE_CONTENT_API}?key=${api_key}`,
