@@ -181,8 +181,7 @@ function App() {
         value={textInput}
         onKeyDown={handleKeyDown}
         onChange={(e) => {
-          const text = e.target.value;
-          console.log(text);               
+          const text = e.target.value;           
           setTextInput(text);
           try {
             handleString(text);
