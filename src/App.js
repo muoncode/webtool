@@ -21,7 +21,7 @@ function App() {
     if (e.key === "Enter") {
       console.log("Người dùng nhập xong:", text);
     }
-  };
+  }; // handleKeyDown
 
   const handleString = (text) => {
     const idSelect = Number(idService);
