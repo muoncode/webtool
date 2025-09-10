@@ -55,7 +55,7 @@ const GENERATE_CONTENT_API = "streamGenerateContent";
   .map(item => item.candidates[0].content.parts[0].text)
   .join("");
 
-    console.log("Kết quả API:", allText);
+    setTextInput(allText);
   })
   .catch((error) => {
     console.error("Lỗi gọi API:", error);
