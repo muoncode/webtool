@@ -205,9 +205,9 @@ function TextToSpeechChatGPT() {
                         setAPI_Key(value);
                     }}
                     value={api_key}
-                    onCopy={(e) => e.preventDefault()}
-                    onCut={(e) => e.preventDefault()}
-                    style={{ userSelect: 'none' }}
+                    // onCopy={(e) => e.preventDefault()}
+                    // onCut={(e) => e.preventDefault()}
+                    // style={{ userSelect: 'none' }}
                 />
 
                 <input
