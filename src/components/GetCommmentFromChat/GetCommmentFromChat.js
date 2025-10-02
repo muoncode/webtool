@@ -64,7 +64,7 @@ export default function GetCommmentFromChat() {
                     <button onClick={() => navigate("/webtool")}>tool</button>
 
                     <button onClick={() => {
-                        const a = prompt("Input :");
+                        const a = prompt("Input for search :");
                         const b = prompt("Replace :");
 
                         setTextInput(textInput.replaceAll(a, b));
