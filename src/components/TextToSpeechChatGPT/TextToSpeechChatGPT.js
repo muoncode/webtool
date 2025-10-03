@@ -12,7 +12,7 @@ function TextToSpeechChatGPT() {
     const navigate = useNavigate();
 
     const [textInput, setTextInput] = useState("");
-    const [textNote, setTextNote] = useState();
+    const [textNote, setTextNote] = useState(`Kore\nLeda\nCallirrhoe\nAutonoe\nDespina`);
     const [base64Audio, setBase64Audio] = useState("");
     const [speed, setSpeed] = useState(1);
     // const [languageCode, setLanguageCode] = useState("vi-VN");
