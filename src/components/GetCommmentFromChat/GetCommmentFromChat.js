@@ -91,7 +91,7 @@ export default function GetCommmentFromChat() {
                                                 if (f.id === i) {
                                                     return {
                                                         ...f,
-                                                        text: `Pressed and Copied , Đã nhấn và Sao chép RỒI ... !`,
+                                                        text: `Pressed and Copied , Đã nhấn và Sao chép RỒI ... !${Array(20).fill('-').join('')}`,
                                                     };
                                                 } else {
                                                     return f;
