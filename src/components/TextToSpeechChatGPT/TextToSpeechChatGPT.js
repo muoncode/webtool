@@ -19,7 +19,7 @@ function TextToSpeechChatGPT() {
     const [voiceName, setVoiceName] = useState("Charon");
     const [count_character, setCount_character] = useState(0);
     const [pitch, setPitch] = useState(0);
-    const [api_key, setAPI_Key] = useState("AIzaSyA7fKi8nKOTBIjgIOde0XAmqrnw2Itd6BY");
+    const [api_key, setAPI_Key] = useState("AIzaSyCcBsHUfX5Ty-NX4Qzb2iWClXtrl32POmQ");
     const [model__TTS, setModel__TTS] = useState("gemini-2.5-flash-preview-tts");
 
     const get___dstv = () => {
@@ -312,3 +312,4 @@ function TextToSpeechChatGPT() {
 
 
 export default TextToSpeechChatGPT;
+
