@@ -45,7 +45,7 @@ function App() {
                 const a = text.split("\n");
                 let b = "";
                 for (let index = 0; index < a.length; index++) {
-                    b += a[index];
+                    b += a[index] + " ";
                 }
                 setKQ(b);
             } else if (idSelect === 4) {
