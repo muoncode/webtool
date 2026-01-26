@@ -147,6 +147,7 @@ function TextToSpeechChatGPT() {
                     if (chunk.candidates?.[0]?.content?.parts?.[0]?.inlineData) {
 
                         const { mimeType, data } = chunk.candidates[0].content.parts[0].inlineData;
+                        setPitch(mimeType);
                         // const fileUrl = await saveToDrive(fileName, mimeType, data);
                         setBase64Audio("data:audio/wav;base64," + convertToWav(data));
                     }
@@ -160,6 +161,9 @@ function TextToSpeechChatGPT() {
                 setTextInput(error + "\n\nGặp lỗi nên không thể Chuyển văn bản sang Giọng Nói");
             });
         // end function tts_axios
+        // fix loi
+        const = pitch;
+        setPitch(3);
     };
 
     return (
@@ -312,4 +316,5 @@ function TextToSpeechChatGPT() {
 
 
 export default TextToSpeechChatGPT;
+
 
