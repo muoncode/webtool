@@ -47,6 +47,7 @@ function App() {
                 for (let index = 0; index < a.length; index++) {
                     b += a[index] + " ";
                 }
+		// xoa xuong dong
                 setKQ(b);
             } else if (idSelect === 4) {
                 const a = text.split("\n");
