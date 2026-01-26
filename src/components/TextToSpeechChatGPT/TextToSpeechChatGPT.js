@@ -161,10 +161,13 @@ function TextToSpeechChatGPT() {
                 setTextInput(error + "\n\nGặp lỗi nên không thể Chuyển văn bản sang Giọng Nói");
             });
         // end function tts_axios
-        // fix loi
-        const = pitch;
-        setPitch(3);
     };
+
+    const ham_Fix_Error = () => {
+        // fix loi        
+        setPitch(pitch);
+        setPitch(3);
+    }
 
     return (
         <div className="container">
@@ -316,5 +319,6 @@ function TextToSpeechChatGPT() {
 
 
 export default TextToSpeechChatGPT;
+
 
 
