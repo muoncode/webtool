@@ -18,7 +18,7 @@ function TextToSpeechChatGPT() {
     // const [languageCode, setLanguageCode] = useState("vi-VN");
     const [voiceName, setVoiceName] = useState("Charon");
     const [count_character, setCount_character] = useState(0);
-    const [pitch, setPitch] = useState(0);
+    // const [pitch, setPitch] = useState(0);
     const [api_key, setAPI_Key] = useState("AIzaSyCcBsHUfX5Ty-NX4Qzb2iWClXtrl32POmQ");
     const [model__TTS, setModel__TTS] = useState("gemini-2.5-flash-preview-tts");
 
@@ -146,8 +146,9 @@ function TextToSpeechChatGPT() {
                 for (const chunk of chunks) {
                     if (chunk.candidates?.[0]?.content?.parts?.[0]?.inlineData) {
 
-                        const { mimeType, data } = chunk.candidates[0].content.parts[0].inlineData;
-                        setPitch(mimeType);
+                        // const { mimeType, data } = chunk.candidates[0].content.parts[0].inlineData;
+                        const { data } = chunk.candidates[0].content.parts[0].inlineData;
+
                         // const fileUrl = await saveToDrive(fileName, mimeType, data);
                         setBase64Audio("data:audio/wav;base64," + convertToWav(data));
                     }
@@ -162,12 +163,6 @@ function TextToSpeechChatGPT() {
             });
         // end function tts_axios
     };
-
-    const ham_Fix_Error = () => {
-        // fix loi        
-        setPitch(pitch);
-        setPitch(3);
-    }
 
     return (
         <div className="container">
