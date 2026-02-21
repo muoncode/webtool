@@ -2,3 +2,7 @@
     padding: 10px 7px;
     border-radius: 3px;
 }
+
+.messageText {
+    color: yellow;
+}
