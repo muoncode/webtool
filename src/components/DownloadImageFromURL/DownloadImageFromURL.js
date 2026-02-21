@@ -68,7 +68,7 @@ function DownloadImageFromURL() {
   const videoId = url.replace(/\/+$/, "").split("/reel/")[1];
   navigator.clipboard.writeText(`https://www.facebook.com/watch/?v=${videoId}`);
                     });
-                }} >Download</button>
+                }} >Facebook URL video</button>
                 <button onClick={download_image} >Download</button>
                 <button onClick={() => navigate("/home")}>Home</button>
                 <span className="messageText">{message}</span>
