@@ -11,7 +11,7 @@ function DownloadImageFromURL() {
     const [textInput, setTextInput] = useState("");
     const [message, setMessage] = useState("");
 
-        const thong__bao = (text) => {
+    const thong__bao = (text) => {
         setMessage(text);
         setTimeout(() => {
             setMessage("");
@@ -65,8 +65,9 @@ function DownloadImageFromURL() {
                     navigator.clipboard.readText().then((url) => {
                         if (!url.includes("/reel/")) return url;
 
-  const videoId = url.replace(/\/+$/, "").split("/reel/")[1];
-  navigator.clipboard.writeText(`https://www.facebook.com/watch/?v=${videoId}`);
+                        const videoId = url.replace(/\/+$/, "").split("/reel/")[1];
+                        navigator.clipboard.writeText(`https://www.facebook.com/watch/?v=${videoId}`);
+                        thong__bao("Đã chuyển URL video Facebook vào clipboard!");
                     });
                 }} >Facebook URL video</button>
                 <button onClick={download_image} >Download</button>
