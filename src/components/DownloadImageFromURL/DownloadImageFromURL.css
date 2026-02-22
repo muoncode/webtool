@@ -4,5 +4,13 @@
 }
 
 .messageText {
-    color: yellow;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+
+  color: yellow;
+  font-size: 22px;
+  text-align: center;
 }

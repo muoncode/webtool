@@ -63,7 +63,10 @@ function DownloadImageFromURL() {
             <div className="btnGroup">
                 <button onClick={() => {
                     navigator.clipboard.readText().then((url) => {
-                        if (!url.includes("/reel/")) return url;
+                        if (!url.includes("/reel/")) {
+                            thong__bao("URL phải xem lại ĐI ... !");
+                            return;
+                        };
 
                         const videoId = url.replace(/\/+$/, "").split("/reel/")[1];
                         navigator.clipboard.writeText(`https://www.facebook.com/watch/?v=${videoId}`);
