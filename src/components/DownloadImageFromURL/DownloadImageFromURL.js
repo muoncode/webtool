@@ -63,6 +63,8 @@ function DownloadImageFromURL() {
             <div className="btnGroup">
                 <button onClick={() => {
                     navigator.clipboard.readText().then((url) => {
+                        setTextInput(url);
+
                         if (!url.includes("/reel/")) {
                             thong__bao("URL phải xem lại ĐI ... !");
                             return;
@@ -75,6 +77,7 @@ function DownloadImageFromURL() {
                 }} >Facebook URL video</button>
                 <button onClick={download_image} >Download</button>
                 <button onClick={() => navigate("/home")}>Home</button>
+                <button onClick={() => setTextInput("")}>Delete</button>
                 <span className="messageText">{message}</span>
             </div>
         </div>
