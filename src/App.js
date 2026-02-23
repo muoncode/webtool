@@ -170,8 +170,8 @@ function App() {
     return (
         <div className="container">
       <textarea
-          rows={"30"}
-          cols={"60"}
+          rows={"38"}
+          cols={"78"}
           placeholder={"Nhập vào đây nha"}
           value={textInput}
           onChange={(e) => {
@@ -255,8 +255,8 @@ function App() {
 
             <textarea
                 className="input-text"
-                rows={"30"}
-                cols={"60"}
+                rows={"38"}
+                cols={"78"}
                 placeholder={"Xem kết quả ở đây"}
                 value={kq !== "" ? kq : ""}
                 onChange={() => {
