@@ -234,9 +234,9 @@ function App() {
 
                 <button
                     onClick={() => {
-                        navigator.clipboard.readText().then((clipboardText) => {
-                            setTextInput(clipboardText);
+                        navigator.clipboard.readText().then((clipboardText) => {                            
                             try {
+                                setTextInput(clipboardText);
                                 handleString(clipboardText);
                             } catch (error) {
                                 setKQ(error);
