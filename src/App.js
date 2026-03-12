@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import {useNavigate} from "react-router-dom";
+import {useState} from "react";
 
 import "./App.css";
 
@@ -9,14 +9,6 @@ function App() {
     const [kq, setKQ] = useState("");
     const [idService, setIdService] = useState(4);
     const [message, setMessage] = useState("");
-
-    useEffect(() => {
-        try {
-            handleString(textInput);
-        } catch (error) {
-            setKQ(error);
-        }
-    }, [idService]);
 
     const thong__bao = (text) => {
         setMessage(text);
@@ -55,7 +47,7 @@ function App() {
                 for (let index = 0; index < a.length; index++) {
                     b += a[index] + " ";
                 }
-                // xoa xuong dong
+		        // xoa xuong dong
                 setKQ(b);
             } else if (idSelect === 4) {
                 const a = text.split("\n");
@@ -178,21 +170,21 @@ function App() {
 
     return (
         <div className="container">
-            <textarea
-                rows={"38"}
-                cols={"78"}
-                placeholder={"Nhập vào đây nha"}
-                value={textInput}
-                onChange={(e) => {
-                    const text = e.target.value;
-                    setTextInput(text);
-                    try {
-                        handleString(text);
-                    } catch (error) {
-                        setKQ(error);
-                    }
-                }}
-            ></textarea>
+      <textarea
+          rows={"38"}
+          cols={"78"}
+          placeholder={"Nhập vào đây nha"}
+          value={textInput}
+          onChange={(e) => {
+              const text = e.target.value;
+              setTextInput(text);
+              try {
+                  handleString(text);
+              } catch (error) {
+                  setKQ(error);
+              }
+          }}
+      ></textarea>
 
             <div className="btnGroup">
                 <select
@@ -240,12 +232,11 @@ function App() {
 
                 <button
                     onClick={() => {
-                        navigator.clipboard.readText().then((clipboardText) => {
-                            try {
+                        navigator.clipboard.readText().then((clipboardText) => {                            
+                            try {           
+                                setIdService(idService);                     
+                                handleString(clipboardText);
                                 setTextInput(clipboardText);
-                                setTimeout(() => {
-                                    handleString(clipboardText);
-                                }, 0);
                             } catch (error) {
                                 setKQ(error);
                             }
