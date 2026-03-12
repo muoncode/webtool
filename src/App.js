@@ -20,7 +20,7 @@ function App() {
         }, 1000);
     };
 
-    const handleString = (text , idSelect) => {
+    const handleString = (text, idSelect) => {
 
         if (text !== "") {
             if (idSelect === 1) {
@@ -183,7 +183,7 @@ function App() {
                     const text = e.target.value;
                     setTextInput(text);
                     try {
-                        handleString(text , idService);
+                        handleString(text, idService);
                     } catch (error) {
                         setKQ(error);
                     }
@@ -238,7 +238,16 @@ function App() {
                     onClick={() => {
                         navigator.clipboard.readText().then((clipboardText) => {
                             try {
-                                handleString(clipboardText, idService);alert(idService);
+                                if (idSelect === 3) {
+                                    const a = text.split("\n");
+                                    let b = "";
+                                    for (let index = 0; index < a.length; index++) {
+                                        b += a[index] + " ";
+                                    }
+                                    // xoa xuong dong
+                                    setKQ(b);
+                                }
+                                handleString(clipboardText, idService);
                                 setTextInput(clipboardText);
                             } catch (error) {
                                 setKQ(error);
@@ -256,7 +265,7 @@ function App() {
                     textInputRef.current.focus();
                 }}
                 >Delete</button>
-                
+
                 <span className="messageText">{message}</span>
             </div>
 
