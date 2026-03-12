@@ -20,8 +20,8 @@ function App() {
         }, 1000);
     };
 
-    const handleString = (text) => {
-        const idSelect = Number(idService);
+    const handleString = (text , idSelect) => {
+
         if (text !== "") {
             if (idSelect === 1) {
                 const a = prompt("Input :");
@@ -183,7 +183,7 @@ function App() {
                     const text = e.target.value;
                     setTextInput(text);
                     try {
-                        handleString(text);
+                        handleString(text , idService);
                     } catch (error) {
                         setKQ(error);
                     }
@@ -238,7 +238,7 @@ function App() {
                     onClick={() => {
                         navigator.clipboard.readText().then((clipboardText) => {
                             try {
-                                handleString(clipboardText);
+                                handleString(clipboardText, idService);
                                 setTextInput(clipboardText);
                             } catch (error) {
                                 setKQ(error);
