@@ -238,7 +238,7 @@ function App() {
                     onClick={() => {
                         navigator.clipboard.readText().then((clipboardText) => {
                             try {
-                                handleString(clipboardText, idService);
+                                handleString(clipboardText, idService);alert(idService);
                                 setTextInput(clipboardText);
                             } catch (error) {
                                 setKQ(error);
