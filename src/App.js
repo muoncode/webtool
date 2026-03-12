@@ -254,7 +254,9 @@ function App() {
                 <button onClick={() => {
                     setTextInput("");
                     textInputRef.current.focus();
-                }}>Delete</button>
+                }}
+                >Delete</button>
+                
                 <span className="messageText">{message}</span>
             </div>
 
