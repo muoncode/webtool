@@ -238,14 +238,15 @@ function App() {
                     onClick={() => {
                         navigator.clipboard.readText().then((clipboardText) => {
                             try {
-                                if (idSelect === 3) {
-                                    const a = text.split("\n");
+                                if (idService === 3) {
+                                    const a = clipboardText.split("\n");
                                     let b = "";
                                     for (let index = 0; index < a.length; index++) {
                                         b += a[index] + " ";
                                     }
                                     // xoa xuong dong
                                     setKQ(b);
+                                    return;
                                 }
                                 handleString(clipboardText, idService);
                                 setTextInput(clipboardText);
