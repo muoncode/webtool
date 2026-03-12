@@ -48,7 +48,7 @@ function App() {
                     b += a[index] + " ";
                 }
 		        // xoa xuong dong
-                setKQ(b); alert("Đã xóa xuống dòng");
+                setKQ(b);
             } else if (idSelect === 4) {
                 const a = text.split("\n");
                 let b = "";
@@ -193,7 +193,7 @@ function App() {
                         if (e.target.value === 11) {
                             return;
                         }
-                        setIdService(e.target.value);
+                        setIdService(Number(e.target.value));
                     }}
                 >
                     <option value={0}>Add Characters</option>
