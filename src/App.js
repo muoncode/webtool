@@ -165,6 +165,7 @@ function App() {
         } else {
             setKQ("Bạn phải nhập nhé !");
         }
+        // end of handleString
     };
 
     return (
@@ -236,7 +237,7 @@ function App() {
                     onClick={() => {
                         navigator.clipboard.readText().then((clipboardText) => {                            
                             try {
-                                setTextInput(clipboardText);
+                                // setTextInput(clipboardText);
                                 handleString(clipboardText);
                             } catch (error) {
                                 setKQ(error);
