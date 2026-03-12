@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./App.css";
 
@@ -9,6 +9,14 @@ function App() {
     const [kq, setKQ] = useState("");
     const [idService, setIdService] = useState(4);
     const [message, setMessage] = useState("");
+
+    useEffect(() => {
+        try {
+            handleString(textInput);
+        } catch (error) {
+            setKQ(error);
+        }
+    }, [idService]);
 
     const thong__bao = (text) => {
         setMessage(text);
