@@ -190,9 +190,6 @@ function App() {
                 <select
                     value={idService}
                     onChange={(e) => {
-                        if (e.target.value === 11) {
-                            return;
-                        }
                         setIdService(Number(e.target.value));
                     }}
                 >
@@ -238,7 +235,8 @@ function App() {
                         navigator.clipboard.readText().then((clipboardText) => {                            
                             try {
                                 setTextInput(clipboardText);
-                                handleString(clipboardText);                          
+                                handleString(clipboardText);                        
+                                handleString(clipboardText);
                             } catch (error) {
                                 setKQ(error);
                             }
