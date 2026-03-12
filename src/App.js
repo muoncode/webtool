@@ -234,8 +234,6 @@ function App() {
                     onClick={() => {
                         navigator.clipboard.readText().then((clipboardText) => {
                             try {
-                                const newId = Number(idService);
-                                setIdService(newId);
                                 handleString(clipboardText);
                                 setTextInput(clipboardText);
                             } catch (error) {
