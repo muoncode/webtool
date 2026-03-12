@@ -246,6 +246,7 @@ function App() {
                                     }
                                     // xoa xuong dong
                                     setKQ(b);
+                                    setTextInput(b);
                                     return;
                                 }
                                 handleString(clipboardText, idService);
