@@ -45,11 +45,7 @@ function App() {
                 }
                 setKQ(b);
             } else if (idSelect === 3) {
-                const a = text.split("\n");
-                let b = "";
-                for (let index = 0; index < a.length; index++) {
-                    b += a[index] + " ";
-                }
+                const b = text.replace(/\s*\n\s*/g, " ").trim();
                 // xoa xuong dong
                 setKQ(b);
             } else if (idSelect === 4) {
