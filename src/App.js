@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import "./App.css";
 
 function App() {
+
+    const textInputRef = useRef(null);
+
     const navigate = useNavigate();
     const [textInput, setTextInput] = useState("");
     const [kq, setKQ] = useState("");
@@ -171,6 +174,7 @@ function App() {
     return (
         <div className="container">
             <textarea
+                ref={textInputRef}
                 rows={"38"}
                 cols={"78"}
                 placeholder={"Nhập vào đây nha"}
@@ -247,7 +251,10 @@ function App() {
 
                 <button onClick={() => navigate("/home")}>Menu</button>
 
-                <button onClick={() => setTextInput("")}>Delete</button>
+                <button onClick={() => {
+                    setTextInput("");
+                    textInputRef.current.focus();
+                }}>Delete</button>
                 <span className="messageText">{message}</span>
             </div>
 
