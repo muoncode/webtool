@@ -45,9 +45,8 @@ function App() {
                 }
                 setKQ(b);
             } else if (idSelect === 3) {
-                const b = text.replace(/\s*\n\s*/g, " ").trim();
                 // xoa xuong dong
-                setKQ(b);
+                setKQ(text.replace(/\s*\n\s*/g, " ").trim());
             } else if (idSelect === 4) {
                 const a = text.split("\n");
                 let b = "";
