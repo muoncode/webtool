@@ -47,8 +47,8 @@ function App() {
                 for (let index = 0; index < a.length; index++) {
                     b += a[index] + " ";
                 }
-		// xoa xuong dong
-                setKQ(b);
+		        // xoa xuong dong
+                setKQ(b); alert("Đã xóa xuống dòng");
             } else if (idSelect === 4) {
                 const a = text.split("\n");
                 let b = "";
@@ -238,8 +238,7 @@ function App() {
                         navigator.clipboard.readText().then((clipboardText) => {                            
                             try {
                                 setTextInput(clipboardText);
-                                handleString(clipboardText);
-                                console.log(idService);                            
+                                handleString(clipboardText);                          
                             } catch (error) {
                                 setKQ(error);
                             }
