@@ -20,6 +20,21 @@ function App() {
         }, 1000);
     };
 
+    const handlePaste = () => {
+                                navigator.clipboard.readText().then((clipboardText) => {
+                            try {
+                                handleString(clipboardText, idService);
+                                setTextInput(clipboardText);
+                                if (idService === 3) {
+                                    navigator.clipboard.writeText(clipboardText.replace(/\s*\n\s*/g, " ").trim());
+                                    thong__bao("đã xóa XUỐNG DÒNG ... !");
+                                }
+                            } catch (error) {
+                                setKQ(error);
+                            }
+                        });
+    };
+
     const handleString = (text, idSelect) => {
 
         if (text !== "") {
@@ -230,20 +245,7 @@ function App() {
                 </button>
 
                 <button
-                    onClick={() => {
-                        navigator.clipboard.readText().then((clipboardText) => {
-                            try {
-                                handleString(clipboardText, idService);
-                                setTextInput(clipboardText);
-                                if (idService === 3) {
-                                    navigator.clipboard.writeText(clipboardText.replace(/\s*\n\s*/g, " ").trim());
-                                    thong__bao("đã xóa XUỐNG DÒNG ... !");
-                                }
-                            } catch (error) {
-                                setKQ(error);
-                            }
-                        });
-                    }}
+                    onClick={handlePaste}
                 >
                     Paste
                 </button>
