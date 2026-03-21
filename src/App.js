@@ -236,7 +236,7 @@ function App() {
                                 handleString(clipboardText, idService);
                                 setTextInput(clipboardText);
                                 if (idService === 3) {
-                                    navigator.clipboard.writeText(kq);
+                                    navigator.clipboard.writeText(clipboardText.replace(/\s*\n\s*/g, " ").trim());
                                     thong__bao("đã xóa XUỐNG DÒNG ... !");
                                 }
                             } catch (error) {
