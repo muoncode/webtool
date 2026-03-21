@@ -21,18 +21,23 @@ function App() {
     };
 
     const handlePaste = () => {
-                                navigator.clipboard.readText().then((clipboardText) => {
-                            try {
-                                handleString(clipboardText, idService);
-                                setTextInput(clipboardText);
-                                if (idService === 3) {
-                                    navigator.clipboard.writeText(clipboardText.replace(/\s*\n\s*/g, " ").trim());
-                                    thong__bao("đã xóa XUỐNG DÒNG ... !");
-                                }
-                            } catch (error) {
-                                setKQ(error);
-                            }
-                        });
+        navigator.clipboard.readText().then((clipboardText) => {
+            try {
+                handleString(clipboardText, idService);
+                setTextInput(clipboardText);
+                if (idService === 3) {
+                    navigator.clipboard.writeText(clipboardText.replace(/\s*\n\s*/g, " ").trim());
+                    thong__bao("đã xóa XUỐNG DÒNG ... !");
+                }
+
+                if (clipboardText && clipboardText.includes(".m3u8")) {
+                    navigator.clipboard.writeText(`N_m3u8DL-RE "${clipboardText}" --auto-select --thread-count 32 -mt --download-retry-count 10`);
+                    thong__bao("đã nối link với CODE ... !");
+                }
+            } catch (error) {
+                setKQ(error);
+            }
+        });
     };
 
     const handleString = (text, idSelect) => {
