@@ -235,6 +235,10 @@ function App() {
                             try {
                                 handleString(clipboardText, idService);
                                 setTextInput(clipboardText);
+                                if (idService === 3) {
+                                    navigator.clipboard.writeText(kq);
+                                    thong__bao("đã xóa XUỐNG DÒNG ... !");
+                                }
                             } catch (error) {
                                 setKQ(error);
                             }
@@ -261,8 +265,6 @@ function App() {
                 cols={"78"}
                 placeholder={"Xem kết quả ở đây"}
                 value={kq !== "" ? kq : ""}
-                onChange={() => {
-                }}
             ></textarea>
         </div>
     );
