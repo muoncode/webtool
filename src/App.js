@@ -29,6 +29,7 @@ function App() {
                 if (idService === 3) {
                     navigator.clipboard.writeText(clipboardText.replace(/\s*\n\s*/g, " ").trim());
                     thong__bao("đã xóa XUỐNG DÒNG ... !");
+                    setCount_character(clipboardText.length);
                 }
 
                 if (clipboardText && clipboardText.toLowerCase().endsWith(".m3u8")) {
