@@ -69,7 +69,7 @@ function App() {
                 // xoa xuong dong
                 const tam = text.replace(/\s*\n\s*/g, " ").trim()
                 setKQ(tam);
-                setCount_character(tam);
+                setCount_character(tam.length);
             } else if (idSelect === 4) {
                 const a = text.split("\n");
                 let b = "";
