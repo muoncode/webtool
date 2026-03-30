@@ -27,9 +27,10 @@ function App() {
                 handleString(clipboardText, idService);
                 setTextInput(clipboardText);
                 if (idService === 3) {
-                    navigator.clipboard.writeText(clipboardText.replace(/\s*\n\s*/g, " ").trim());
+                    const tam = clipboardText.replace(/\s*\n\s*/g, " ").trim()
+                    navigator.clipboard.writeText(tam);
                     thong__bao("đã xóa XUỐNG DÒNG ... !");
-                    setCount_character(clipboardText.length);
+                    setCount_character(tam.length);
                 }
 
                 if (clipboardText && clipboardText.toLowerCase().endsWith(".m3u8")) {
