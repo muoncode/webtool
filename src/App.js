@@ -12,6 +12,7 @@ function App() {
     const [kq, setKQ] = useState("");
     const [idService, setIdService] = useState(4);
     const [message, setMessage] = useState("");
+    const [count_character, setCount_character] = useState(0);
 
     const thong__bao = (text) => {
         setMessage(text);
@@ -66,7 +67,9 @@ function App() {
                 setKQ(b);
             } else if (idSelect === 3) {
                 // xoa xuong dong
-                setKQ(text.replace(/\s*\n\s*/g, " ").trim());
+                const tam = text.replace(/\s*\n\s*/g, " ").trim()
+                setKQ(tam);
+                setCount_character(tam);
             } else if (idSelect === 4) {
                 const a = text.split("\n");
                 let b = "";
@@ -206,6 +209,8 @@ function App() {
             ></textarea>
 
             <div className="btnGroup">
+                <button>{count_character}</button>
+
                 <select
                     value={idService}
                     onChange={(e) => {
