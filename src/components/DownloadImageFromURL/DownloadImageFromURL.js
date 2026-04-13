@@ -75,6 +75,14 @@ function DownloadImageFromURL() {
                         thong__bao("Đã chuyển URL video Facebook vào clipboard!");
                     });
                 }} >Facebook URL video</button>
+
+                <button onClick={() => {
+                    navigator.clipboard.readText().then((url) => {
+                        navigator.clipboard.writeText(`yt-dlp --js-runtimes node --merge-output-format mp4 --downloader aria2c -N 16 "${url}"`);
+                        thong__bao("đã nối URL. Hãy dùng lệnh để tải VIDEO ...");
+                    });
+                }}>yt-dlp</button>
+
                 <button onClick={download_image} >Download</button>
                 <button onClick={() => navigate("/home")}>Home</button>
                 <button onClick={() => setTextInput("")}>Delete</button>
