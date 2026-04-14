@@ -78,7 +78,7 @@ function DownloadImageFromURL() {
 
                 <button onClick={() => {
                     navigator.clipboard.readText().then((url) => {
-                        navigator.clipboard.writeText(`yt-dlp --js-runtimes node --merge-output-format mp4 -N 16 "${url}"`);
+                        navigator.clipboard.writeText(`yt-dlp --js-runtimes node -f "bv*+ba/b" --merge-output-format mp4 -N 16 "${url}"`);
                         thong__bao("đã nối URL. Hãy dùng lệnh để tải VIDEO ...");
                     });
                 }}>yt-dlp</button>
