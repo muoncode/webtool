@@ -45,7 +45,7 @@ function Base64ToAudio() {
           if (textInput[0] === "\"") {
             setBase64Audio(textInput.slice(1, -1));
           } else {
-            setBase64Audio(textInput);
+            // setBase64Audio(textInput);
             // bat dau thu
             const raw = textInput;
 
