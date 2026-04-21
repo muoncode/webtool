@@ -140,6 +140,8 @@ function Base64ToAudio() {
           Paste
         </button>
 
+        <button onClick={() => navigator.clipboard.writeText(textInput)}>Copy</button>
+
         <button onClick={() => setTextInput("")}>Delete</button>
 
         <button
