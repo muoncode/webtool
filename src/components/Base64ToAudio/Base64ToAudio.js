@@ -74,6 +74,10 @@ function Base64ToAudio() {
           });
         }}>Audio Base64</button>
 
+        <button onClick={() => {
+          setBase64Audio("data:audio/wav;base64," + textInput);
+        }}>ok + base64</button>
+
         <button
           onClick={() => {
             const regExp = /[a-zA-Z]/g;
