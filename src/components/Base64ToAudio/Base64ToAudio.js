@@ -42,29 +42,36 @@ function Base64ToAudio() {
       <div className="btnGroup_tts">
 
         <button onClick={() => {
-          if (textInput[0] === "\"") {
-            setBase64Audio(textInput.slice(1, -1));
-          } else {
-            // bat dau thu
-            const isMatch = textInput.startsWith('data:audio/') && textInput.includes(';base64,');
-            if (isMatch) {
-              setBase64Audio(textInput);
+          navigator.clipboard.readText().then((clipboardText) => {
+
+            setTextInput(clipboardText);
+
+            if (clipboardText[0] === "\"") {
+              setBase64Audio(clipboardText.slice(1, -1));
             } else {
-              const raw = textInput;
+              // bat dau thu
 
-              const match = raw.match(/\[\\"(.*?)\\"\]/);
+              const isMatch = clipboardText.startsWith('data:audio/') && clipboardText.includes(';base64,');
 
-              let mabase64 = null;
+              if (isMatch) {
+                setBase64Audio(clipboardText);
+              } else {
+                const raw = clipboardText;
 
-              if (match) {
-                mabase64 = JSON.parse(`"${match[1]}"`);
+                const match = raw.match(/\[\\"(.*?)\\"\]/);
+
+                let mabase64 = null;
+
+                if (match) {
+                  mabase64 = JSON.parse(`"${match[1]}"`);
+                }
+
+                setTextInput("data:audio/ogg;base64," + mabase64);
+                setBase64Audio("data:audio/ogg;base64," + mabase64);
               }
-
-              setTextInput("data:audio/ogg;base64," + mabase64);
-              setBase64Audio("data:audio/ogg;base64," + mabase64);
+              // ket thuc thu
             }
-            // ket thuc thu
-          }
+          });
         }}>Audio Base64</button>
 
         <button
