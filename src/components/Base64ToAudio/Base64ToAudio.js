@@ -76,6 +76,7 @@ function Base64ToAudio() {
 
         <button onClick={() => {
           setBase64Audio("data:audio/wav;base64," + textInput);
+          setTextInput("data:audio/wav;base64," + textInput);
         }}>ok + base64</button>
 
         <button
