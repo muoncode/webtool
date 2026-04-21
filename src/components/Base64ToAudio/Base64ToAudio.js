@@ -45,20 +45,24 @@ function Base64ToAudio() {
           if (textInput[0] === "\"") {
             setBase64Audio(textInput.slice(1, -1));
           } else {
-            // setBase64Audio(textInput);
             // bat dau thu
-            const raw = textInput;
+            const isMatch = textInput.startsWith('data:audio/') && textInput.includes(';base64,');
+            if (isMatch) {
+              setBase64Audio(textInput);
+            } else {
+              const raw = textInput;
 
-            const match = raw.match(/\[\\"(.*?)\\"\]/);
+              const match = raw.match(/\[\\"(.*?)\\"\]/);
 
-            let mabase64 = null;
+              let mabase64 = null;
 
-            if (match) {
-              mabase64 = JSON.parse(`"${match[1]}"`);
+              if (match) {
+                mabase64 = JSON.parse(`"${match[1]}"`);
+              }
+
+              setTextInput("data:audio/ogg;base64," + mabase64);
+              setBase64Audio("data:audio/ogg;base64," + mabase64);
             }
-
-            setTextInput("data:audio/ogg;base64," + mabase64);
-            setBase64Audio("data:audio/ogg;base64," + mabase64);
             // ket thuc thu
           }
         }}>Audio Base64</button>
