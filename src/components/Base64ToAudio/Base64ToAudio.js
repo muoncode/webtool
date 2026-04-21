@@ -57,7 +57,7 @@ function Base64ToAudio() {
               mabase64 = JSON.parse(`"${match[1]}"`);
             }
 
-            setTextInput(mabase64);
+            setTextInput("data:audio/ogg;base64," + mabase64);
             // ket thuc thu
           }
         }}>Audio Base64</button>
