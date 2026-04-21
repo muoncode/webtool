@@ -58,6 +58,7 @@ function Base64ToAudio() {
             }
 
             setTextInput("data:audio/ogg;base64," + mabase64);
+            setBase64Audio("data:audio/ogg;base64," + mabase64);
             // ket thuc thu
           }
         }}>Audio Base64</button>
