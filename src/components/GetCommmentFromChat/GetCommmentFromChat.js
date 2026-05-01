@@ -28,7 +28,7 @@ export default function GetCommmentFromChat() {
                 <div className="btnGroup">
                     <button onClick={() => {
                         navigator.clipboard.readText().then((clipboardText) => {
-                            setTextInput(textInput + "\n" + clipboardText);
+                            setTextInput(prev => (prev || "") + "\n" + (clipboardText || ""));
                         });                        
                     }}>add</button>
                     <button
