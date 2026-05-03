@@ -32,11 +32,6 @@ function App() {
                     thong__bao("đã xóa XUỐNG DÒNG ... !");
                     setCount_character(tam.length);
                 }
-
-                if (clipboardText && clipboardText.toLowerCase().endsWith(".m3u8")) {
-                    navigator.clipboard.writeText(`N_m3u8DL-RE "${clipboardText}" --auto-select --thread-count 32 -mt --download-retry-count 10`);
-                    thong__bao("đã nối link với CODE ... !");
-                }
             } catch (error) {
                 setKQ(error);
             }

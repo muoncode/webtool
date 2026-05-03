@@ -83,6 +83,13 @@ function DownloadImageFromURL() {
                     });
                 }}>yt-dlp</button>
 
+                <button onClick={() => {
+                    navigator.clipboard.readText().then((clipboardText) => {
+                        navigator.clipboard.writeText(`N_m3u8DL-RE "${clipboardText}" --auto-select --thread-count 32 -mt --download-retry-count 10`);
+                        thong__bao("đã nối link với CODE ... !");
+                    });                    
+                }}>N_m3u8DL-RE</button>
+
                 <button onClick={download_image} >Download</button>
                 <button onClick={() => navigate("/home")}>Home</button>
                 <button onClick={() => setTextInput("")}>Delete</button>
