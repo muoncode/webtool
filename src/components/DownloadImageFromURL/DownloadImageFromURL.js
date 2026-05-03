@@ -63,7 +63,6 @@ function DownloadImageFromURL() {
             <div className="btnGroup">
                 <button onClick={() => {
                     navigator.clipboard.readText().then((url) => {
-                        setTextInput(url);
 
                         if (!url.includes("/reel/")) {
                             thong__bao("URL phải xem lại ĐI ... !");
@@ -72,6 +71,7 @@ function DownloadImageFromURL() {
 
                         const videoId = url.replace(/\/+$/, "").split("/reel/")[1];
                         navigator.clipboard.writeText(`https://www.facebook.com/watch/?v=${videoId}`);
+                        setTextInput(`https://www.facebook.com/watch/?v=${videoId}`);
                         thong__bao("Đã chuyển URL video Facebook vào clipboard!");
                     });
                 }} >Facebook URL video</button>
@@ -79,6 +79,7 @@ function DownloadImageFromURL() {
                 <button onClick={() => {
                     navigator.clipboard.readText().then((url) => {
                         navigator.clipboard.writeText(`yt-dlp --js-runtimes node -f "bv*+ba/b" --merge-output-format mp4 -N 16 "${url}"`);
+                        setTextInput(`yt-dlp --js-runtimes node -f "bv*+ba/b" --merge-output-format mp4 -N 16 "${url}"`);
                         thong__bao("đã nối URL. Hãy dùng lệnh để tải VIDEO ...");
                     });
                 }}>yt-dlp</button>
@@ -86,6 +87,7 @@ function DownloadImageFromURL() {
                 <button onClick={() => {
                     navigator.clipboard.readText().then((clipboardText) => {
                         navigator.clipboard.writeText(`N_m3u8DL-RE "${clipboardText}" --auto-select --thread-count 32 -mt --download-retry-count 10`);
+                        setTextInput(`N_m3u8DL-RE "${clipboardText}" --auto-select --thread-count 32 -mt --download-retry-count 10`);
                         thong__bao("đã nối link với CODE ... !");
                     });                    
                 }}>N_m3u8DL-RE</button>
