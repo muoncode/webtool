@@ -92,6 +92,15 @@ function DownloadImageFromURL() {
                     });                    
                 }}>N_m3u8DL-RE</button>
 
+                <button onClick={() => {
+                    navigator.clipboard.readText().then((clipboardText) => {
+                        const result = clipboardText.replace("/shorts/", "/watch?v=");
+                        navigator.clipboard.writeText(result);
+                        thong__bao("Đã copy XONG ... !");
+                        setTextInput(result);
+                    });
+                }}>Youtube Shorts URL</button>
+
                 <button onClick={download_image} >Download</button>
                 <button onClick={() => navigate("/home")}>Home</button>
                 <button onClick={() => setTextInput("")}>Delete</button>
