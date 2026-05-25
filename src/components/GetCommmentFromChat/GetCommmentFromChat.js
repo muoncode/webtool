@@ -26,13 +26,13 @@ export default function GetCommmentFromChat() {
                 ) : null}
 
                 <div className="btnGroup">
-
-                    <button onClick={() => navigator.clipboard.writeText(textInput)}>Copy</button>
+                    
                     <button onClick={() => {
                         navigator.clipboard.readText().then((clipboardText) => {
                             setTextInput(prev => (prev || "") + "\n" + (clipboardText || ""));
                         });                        
                     }}>add</button>
+                    <button onClick={() => navigator.clipboard.writeText(textInput)}>Copy</button>
                     <button
                         onClick={() => {
                             const a = textInput.split("\n");
