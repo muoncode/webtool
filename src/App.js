@@ -208,7 +208,7 @@ function App() {
             <div className="btnGroup">
                 <button onClick={() => {
                     navigator.clipboard.readText().then((clipboardText) => {
-                        let new_Text = textInput + "\n" + clipboardText;
+                        const new_Text = textInput + "\n" + clipboardText;
                         // setTextInput(prev => (prev || "") + "\n" + (clipboardText || ""));
                         setTextInput(new_Text);
                         handleString(new_Text, idService);
