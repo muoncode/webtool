@@ -30,7 +30,7 @@ export default function GetCommmentFromChat() {
                     <button onClick={() => {
                         navigator.clipboard.readText().then((clipboardText) => {
                             setTextInput(prev => (prev || "") + "\n" + (clipboardText || ""));
-                        });                        
+                        });
                     }}>add</button>
                     <button onClick={() => navigator.clipboard.writeText(textInput)}>Copy</button>
                     <button

@@ -206,7 +206,14 @@ function App() {
             ></textarea>
 
             <div className="btnGroup">
-                <button>{count_character}</button>
+                <button onClick={() => {
+                    navigator.clipboard.readText().then((clipboardText) => {
+                        let new_Text = textInput + "\n" + clipboardText;
+                        // setTextInput(prev => (prev || "") + "\n" + (clipboardText || ""));
+                        setTextInput(new_Text);
+                        handleString(new_Text, idService);
+                    });
+                }} >{count_character}</button>
 
                 <select
                     value={idService}
