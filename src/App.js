@@ -236,19 +236,6 @@ function App() {
                     <option value={12}>Link YT Short</option>
                 </select>
 
-                <button onClick={() => {
-                    let result = '';
-                    for (let i = 0; i < 20; i++) {
-                        result += Math.floor(Math.random() * 10); // Random digit from 0 to 9
-                    }
-                    setKQ(result);
-                    thong__bao("Đã tạo và COPY chuỗi số Ngẫu Nhiên ... !");
-                    navigator.clipboard.writeText(result);
-                }}>Random Number
-                </button>
-
-                <button onClick={() => navigate("/tts_us")}>tts</button>
-
                 <button
                     onClick={() => {
                         navigator.clipboard.writeText(kq);
@@ -272,7 +259,20 @@ function App() {
                 }}
                 >Delete</button>
 
-                <button onClick={() => navigate("//getcommment")}>get cmt</button>
+                <button onClick={() => {
+                    let result = '';
+                    for (let i = 0; i < 20; i++) {
+                        result += Math.floor(Math.random() * 10); // Random digit from 0 to 9
+                    }
+                    setKQ(result);
+                    thong__bao("Đã tạo và COPY chuỗi số Ngẫu Nhiên ... !");
+                    navigator.clipboard.writeText(result);
+                }}>Random Number
+                </button>
+
+                <button onClick={() => navigate("/tts_us")}>tts</button>
+
+                <button onClick={() => navigate("/getcommment")}>get cmt</button>
 
                 <span className="messageText">{message}</span>
             </div>
