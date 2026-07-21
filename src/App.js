@@ -272,6 +272,8 @@ function App() {
                 }}
                 >Delete</button>
 
+                <button onClick={() => navigate("//getcommment")}>get cmt</button>
+
                 <span className="messageText">{message}</span>
             </div>
 
