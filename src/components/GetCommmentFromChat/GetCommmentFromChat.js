@@ -48,6 +48,7 @@ export default function GetCommmentFromChat() {
                                     a[index] = a[index].slice(0, -1);
                                 }
 
+                                a[index] = a[index].replace(/\*\*\[\d+\]\*\*/g, '')
                                 b.push({ id: index, text: a[index] });
                             }
 
