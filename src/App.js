@@ -260,10 +260,21 @@ function App() {
                 >Delete</button>
 
                 <button onClick={() => {
+                    const now = new Date();
+    
+                    const year = now.getFullYear();
+                    const month = String(now.getMonth() + 1).padStart(2, '0');
+                    const day = String(now.getDate()).padStart(2, '0');
+                    const hours = String(now.getHours()).padStart(2, '0');
+                    const minutes = String(now.getMinutes()).padStart(2, '0');
+                    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+
                     let result = '';
-                    for (let i = 0; i < 20; i++) {
+                    for (let i = 0; i < 6; i++) {
                         result += Math.floor(Math.random() * 10); // Random digit from 0 to 9
                     }
+                    result += `${year}${month}${day}${hours}${minutes}${seconds}`;
                     setKQ(result);
                     thong__bao("Đã tạo và COPY chuỗi số Ngẫu Nhiên ... !");
                     navigator.clipboard.writeText(result);
