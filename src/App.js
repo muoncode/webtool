@@ -271,10 +271,11 @@ function App() {
 
 
                     let result = '';
-                    for (let i = 0; i < 6; i++) {
+                    for (let i = 0; i < 16; i++) {
                         result += Math.floor(Math.random() * 10); // Random digit from 0 to 9
                     }
-                    result += `${year}${month}${day}${hours}${minutes}${seconds}`;
+                    // result += `${year}${month}${day}${hours}${minutes}${seconds}`;
+                    result += `${seconds}${minutes}`;
                     setKQ(result);
                     thong__bao("Đã tạo và COPY chuỗi số Ngẫu Nhiên ... !");
                     navigator.clipboard.writeText(result);
