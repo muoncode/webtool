@@ -257,7 +257,8 @@ function App() {
                     const a = prompt("Input for search :");
                     const b = prompt("Replace :");
 
-                    setTextInput(textInput.replaceAll(a, b));
+                    const final_text = textInput.replaceAll(a, b);
+                    setTextInput(final_text);
                 }}> replace </button>
 
                 <button onClick={() => {
