@@ -254,6 +254,13 @@ function App() {
                 <button onClick={() => navigate("/home")}>Menu</button>
 
                 <button onClick={() => {
+                    const a = prompt("Input for search :");
+                    const b = prompt("Replace :");
+
+                    setTextInput(textInput.replaceAll(a, b));
+                }}> replace </button>
+
+                <button onClick={() => {
                     setTextInput("");
                     textInputRef.current.focus();
                 }}
