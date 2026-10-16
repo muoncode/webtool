@@ -101,6 +101,17 @@ function DownloadImageFromURL() {
                     });
                 }}>Youtube Shorts URL</button>
 
+
+                    <button onClick={() => {
+                    navigator.clipboard.readText().then((url) => {
+                        // navigator.clipboard.writeText(`yt-dlp --js-runtimes node -f "bv*+ba/b" --merge-output-format mp4 -N 16 "${url}"`);
+                        navigator.clipboard.writeText(`yt-dlp -P ~/Downloads "${url}"`);
+                        // setTextInput(`yt-dlp --js-runtimes node -f "bv*+ba/b" --merge-output-format mp4 -N 16 "${url}"`);
+                        setTextInput(`yt-dlp -P ~/Downloads "${url}"`);
+                        thong__bao("đã nối URL. Hãy dùng lệnh để tải VIDEO ...");
+                    });
+                }}>yt-dlp on MAC</button>
+
                 <button onClick={download_image} >Download</button>
                 <button onClick={() => navigate("/home")}>Home</button>
                 <button onClick={() => setTextInput("")}>Delete</button>
