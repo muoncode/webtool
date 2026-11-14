@@ -305,7 +305,7 @@ function App() {
                         localStorage.removeItem(DRAFT_KEY);
                         setTextInput("");
                         textInputRef.current.focus();
-                        thong__bao("Đã xóa nháp đã lưu");
+                        thong__bao("Xóa nháp đã lưu");
                     }}
                 >
                     Xóa nháp
