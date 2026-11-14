@@ -14,55 +14,6 @@ function App() {
     const [message, setMessage] = useState("");
     const [count_character, setCount_character] = useState(0);
 
-    // Bên trong function App, sau các khai báo state:
-    const DRAFT_KEY = "draft-content";
-    const textInputLatest = useRef(textInput);
-
-    // Giữ ref luôn đồng bộ với state
-    useEffect(() => {
-        textInputLatest.current = textInput;
-    }, [textInput]);
-
-    // Khôi phục nháp khi mở trang
-    useEffect(() => {
-        const saved = localStorage.getItem(DRAFT_KEY);
-        if (saved) setTextInput(saved);
-    }, []);
-
-    // Đăng ký sự kiện khi component mount
-    useEffect(() => {
-        // 1. beforeunload: cảnh báo nếu có nội dung chưa lưu
-        const handleBeforeUnload = (event) => {
-            if (textInputLatest.current !== "") {
-                event.preventDefault();
-                event.returnValue = "";
-            }
-        };
-
-        // 2. pagehide: lưu nháp khi trang bị đóng hoặc chuyển đi
-        const handlePageHide = () => {
-            localStorage.setItem(DRAFT_KEY, textInputLatest.current);
-        };
-
-        // 3. visibilitychange: lưu thêm khi tab bị ẩn (hỗ trợ tốt trên di động)
-        const handleVisibility = () => {
-            if (document.visibilityState === "hidden") {
-                localStorage.setItem(DRAFT_KEY, textInputLatest.current);
-            }
-        };
-
-        window.addEventListener("beforeunload", handleBeforeUnload);
-        window.addEventListener("pagehide", handlePageHide);
-        document.addEventListener("visibilitychange", handleVisibility);
-
-        // Gỡ bỏ khi component unmount
-        return () => {
-            window.removeEventListener("beforeunload", handleBeforeUnload);
-            window.removeEventListener("pagehide", handlePageHide);
-            document.removeEventListener("visibilitychange", handleVisibility);
-        };
-    }, []);
-
     const thong__bao = (text) => {
         setMessage(text);
         setTimeout(() => {
