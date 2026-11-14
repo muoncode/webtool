@@ -14,41 +14,6 @@ function App() {
     const [message, setMessage] = useState("");
     const [count_character, setCount_character] = useState(0);
 
-    // Đăng ký sự kiện khi component mount
-    useEffect(() => {
-        // 1. beforeunload: cảnh báo nếu có nội dung chưa lưu
-        const handleBeforeUnload = (event) => {
-            if (textInputLatest.current !== "") {
-                event.preventDefault();
-                event.returnValue = "";
-                alert("Bạn vừa đóng hoặc chuyển trang, nội dung sẽ được lưu nháp");
-            }
-        };
-
-        // 2. pagehide: lưu nháp khi trang bị đóng hoặc chuyển đi
-        const handlePageHide = () => {
-            alert("Bạn vừa đóng hoặc chuyển trang, nội dung sẽ được lưu nháp");
-        };
-
-        // 3. visibilitychange: lưu thêm khi tab bị ẩn (hỗ trợ tốt trên di động)
-        const handleVisibility = () => {
-            if (document.visibilityState === "hidden") {
-                alert("Bạn vừa ẩn tab, nội dung sẽ được lưu nháp");
-            }
-        };
-
-        window.addEventListener("beforeunload", handleBeforeUnload);
-        window.addEventListener("pagehide", handlePageHide);
-        document.addEventListener("visibilitychange", handleVisibility);
-
-        // Gỡ bỏ khi component unmount
-        return () => {
-            window.removeEventListener("beforeunload", handleBeforeUnload);
-            window.removeEventListener("pagehide", handlePageHide);
-            document.removeEventListener("visibilitychange", handleVisibility);
-        };
-    }, []);
-
     const thong__bao = (text) => {
         setMessage(text);
         setTimeout(() => {
