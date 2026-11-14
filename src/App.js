@@ -31,37 +31,18 @@ function App() {
 
     // Đăng ký sự kiện khi component mount
     useEffect(() => {
-        // 1. beforeunload: cảnh báo nếu có nội dung chưa lưu
-        const handleBeforeUnload = (event) => {
-            alert("Bạn có nội dung chưa lưu, hãy lưu trước khi rời đi!");
-            if (textInputLatest.current !== "") {
-                event.preventDefault();
-                event.returnValue = "";                
-            }
-        };
-
-        // 2. pagehide: lưu nháp khi trang bị đóng hoặc chuyển đi
-        const handlePageHide = () => {
-            localStorage.setItem(DRAFT_KEY, textInputLatest.current);
-            alert("Đã lưu nháp khi trang bị đóng hoặc chuyển đi");
-        };
 
         // 3. visibilitychange: lưu thêm khi tab bị ẩn (hỗ trợ tốt trên di động)
         const handleVisibility = () => {
             if (document.visibilityState === "hidden") {
-                localStorage.setItem(DRAFT_KEY, textInputLatest.current);
-                alert("Đã lưu nháp khi tab bị ẩn");
+                localStorage.setItem(DRAFT_KEY, textInputLatest.current);                
             }
         };
 
-        window.addEventListener("beforeunload", handleBeforeUnload);
-        window.addEventListener("pagehide", handlePageHide);
         document.addEventListener("visibilitychange", handleVisibility);
 
         // Gỡ bỏ khi component unmount
         return () => {
-            window.removeEventListener("beforeunload", handleBeforeUnload);
-            window.removeEventListener("pagehide", handlePageHide);
             document.removeEventListener("visibilitychange", handleVisibility);
         };
     }, []);
