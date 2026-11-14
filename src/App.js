@@ -14,7 +14,7 @@ function App() {
     const [message, setMessage] = useState("");
     const [count_character, setCount_character] = useState(0);
 
-    window.addEventListener('beforeunload', (event) => {
+    window.addEventListener('visibilitychange', (event) => {
         // Chỉ dùng khi muốn cảnh báo người dùng có dữ liệu chưa lưu
         // event.preventDefault();
         // event.returnValue = '';
