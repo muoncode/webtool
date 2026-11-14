@@ -278,13 +278,13 @@ function App() {
                     Copy
                 </button>
 
+                <button onClick={() => navigate("/home")}>Menu</button>
+
                 <button
                     onClick={handlePaste}
                 >
                     Paste
                 </button>
-
-                <button onClick={() => navigate("/home")}>Menu</button>
 
                 <button onClick={() => {
                     const a = prompt("Input for search :");
