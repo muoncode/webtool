@@ -33,10 +33,10 @@ function App() {
     useEffect(() => {
         // 1. beforeunload: cảnh báo nếu có nội dung chưa lưu
         const handleBeforeUnload = (event) => {
+            alert("Bạn có nội dung chưa lưu, hãy lưu trước khi rời đi!");
             if (textInputLatest.current !== "") {
                 event.preventDefault();
-                event.returnValue = "";
-                alert("Bạn có nội dung chưa lưu, hãy lưu trước khi rời đi!");
+                event.returnValue = "";                
             }
         };
 
