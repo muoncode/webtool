@@ -35,7 +35,7 @@ function App() {
         // 3. visibilitychange: lưu thêm khi tab bị ẩn (hỗ trợ tốt trên di động)
         const handleVisibility = () => {
             if (document.visibilityState === "hidden") {
-                localStorage.setItem(DRAFT_KEY, textInputLatest.current);                
+                localStorage.setItem(DRAFT_KEY, textInputLatest.current);
             }
         };
 
@@ -299,6 +299,17 @@ function App() {
                     textInputRef.current.focus();
                 }}
                 >Delete</button>
+
+                <button
+                    onClick={() => {
+                        localStorage.removeItem(DRAFT_KEY);
+                        setTextInput("");
+                        textInputRef.current.focus();
+                        thong__bao("Đã xóa nháp đã lưu");
+                    }}
+                >
+                    Xóa nháp
+                </button>
 
                 <button onClick={() => {
                     const now = new Date();
