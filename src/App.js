@@ -14,6 +14,18 @@ function App() {
     const [message, setMessage] = useState("");
     const [count_character, setCount_character] = useState(0);
 
+    window.addEventListener('beforeunload', (event) => {
+        // Chỉ dùng khi muốn cảnh báo người dùng có dữ liệu chưa lưu
+        // event.preventDefault();
+        // event.returnValue = '';
+        alert("Bạn có chắc chắn muốn rời khỏi trang này không? Dữ liệu chưa lưu sẽ bị mất.");
+    });
+
+    window.addEventListener('pagehide', () => {
+        // Lưu dữ liệu hoặc dọn dẹp tài nguyên ở đây
+        alert("Bạn có chắc chắn muốn rời khỏi trang này không? Dữ liệu chưa lưu sẽ bị mất. khi dong tab hoặc đóng trình duyệt.");
+    });
+
     const thong__bao = (text) => {
         setMessage(text);
         setTimeout(() => {
@@ -269,7 +281,7 @@ function App() {
 
                 <button onClick={() => {
                     const now = new Date();
-    
+
                     // const year = now.getFullYear();
                     // const month = String(now.getMonth() + 1).padStart(2, '0');
                     // const day = String(now.getDate()).padStart(2, '0');
